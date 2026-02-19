@@ -470,9 +470,9 @@
                         </div>
                     </div>
 
-                    <!-- Q2: County (public schools only) -->
+                    <!-- Q2: County -->
                     <div class="question conditional" id="countyQuestion">
-                        <span class="question-label required">What county is the public school in?</span>
+                        <span class="question-label required">What county is the school in?</span>
                         <div class="search-select-container" id="countyContainer">
                             <input type="text" class="search-input" id="countySearch" placeholder="Type to search counties..." autocomplete="off">
                             <div class="dropdown-list" id="countyDropdown"></div>
@@ -1076,7 +1076,7 @@
             "Northampton": ["Bangor Area", "Bethlehem Area", "Easton Area", "Nazareth Area", "Northampton Area", "Pen Argyl Area", "Saucon Valley", "Wilson Area", "Other - please specify"],
             "Northumberland": ["Line Mountain", "Milton Area", "Mount Carmel Area", "Shamokin Area", "Shikellamy", "Warrior Run", "Other - please specify"],
             "Perry": ["Greenwood", "Newport", "Susquenita", "West Perry", "Other - please specify"],
-            "Philadelphia": ["Philadelphia City", "Other - please specify"],
+            "Philadelphia": ["School District of Philadelphia", "Other - please specify"],
             "Pike": ["Delaware Valley", "Wallenpaupack Area", "Other - please specify"],
             "Potter": ["Austin Area", "Coudersport Area", "Galeton Area", "Northern Potter", "Oswayo Valley", "Other - please specify"],
             "Schuylkill": ["Blue Mountain", "Mahanoy Area", "Minersville Area", "North Schuylkill", "Pine Grove Area", "Pottsville Area", "Saint Clair Area", "Schuylkill Haven Area", "Shenandoah Valley", "Tamaqua Area", "Tri-Valley", "Williams Valley", "Other - please specify"],
@@ -1200,10 +1200,10 @@
             countyValue.value = county;
             countyDropdown.classList.remove('open');
             document.getElementById('countyError').classList.remove('visible');
-            updateDistrictDropdown(county);
 
             const schoolType = document.querySelector('input[name="schoolType"]:checked');
             if (schoolType && schoolType.value === 'Public school') {
+                updateDistrictDropdown(county);
                 districtQuestion.classList.add('visible');
                 districtSearch.value = '';
                 districtValue.value = '';
@@ -1295,19 +1295,19 @@
         // School type change handler
         document.querySelectorAll('input[name="schoolType"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
+                // Always show county for all school types
+                countyQuestion.classList.add('visible');
+
                 if (e.target.value === 'Public school') {
-                    countyQuestion.classList.add('visible');
                     schoolNameQuestion.classList.remove('visible');
                     if (countyValue.value) {
                         districtQuestion.classList.add('visible');
                     }
                 } else {
-                    countyQuestion.classList.remove('visible');
+                    // Private/Charter: show school name, hide district
                     districtQuestion.classList.remove('visible');
                     districtOtherQuestion.classList.remove('visible');
                     schoolNameQuestion.classList.add('visible');
-                    countySearch.value = '';
-                    countyValue.value = '';
                     districtSearch.value = '';
                     districtValue.value = '';
                 }
@@ -1461,15 +1461,16 @@
                 return;
             }
 
-            // Validate county/district for public schools
+            // Validate county for all school types
             const schoolType = document.querySelector('input[name="schoolType"]:checked');
-            if (schoolType && schoolType.value === 'Public school') {
+            if (schoolType) {
                 let valid = true;
                 if (!countyValue.value) {
                     document.getElementById('countyError').classList.add('visible');
                     valid = false;
                 }
-                if (!districtValue.value) {
+                // Validate district only for public schools
+                if (schoolType.value === 'Public school' && !districtValue.value) {
                     document.getElementById('districtError').classList.add('visible');
                     valid = false;
                 }
