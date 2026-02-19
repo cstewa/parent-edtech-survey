@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parent/Caregiver Survey: Technology & Screen Time in Schools</title>
+    <meta name="description" content="Share your perspective on technology and screen time in Pennsylvania schools. Help build a public dashboard of parent feedback across school districts.">
+    <meta property="og:title" content="Perspectives on Technology & Screen Time in School">
+    <meta property="og:description" content="A parent/caregiver survey to understand how families across Pennsylvania feel about technology and screen time in schools.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://parent-edtech-survey.netlify.app">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Perspectives on Technology & Screen Time in School">
+    <meta name="twitter:description" content="Share your perspective on technology and screen time in Pennsylvania schools.">
     <style>
         * {
             box-sizing: border-box;
@@ -44,6 +52,29 @@
         .survey-header p {
             opacity: 0.9;
             font-size: 1rem;
+        }
+
+        /* Progress bar */
+        .progress-container {
+            background: #e8e4dc;
+            height: 6px;
+            width: 100%;
+        }
+
+        .progress-bar {
+            background: #557a3e;
+            height: 100%;
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        .progress-label {
+            text-align: center;
+            padding: 8px 30px;
+            font-size: 0.85rem;
+            color: #888;
+            background: #faf9f7;
+            border-bottom: 1px solid #e8e4dc;
         }
 
         .survey-body {
@@ -141,6 +172,36 @@
             padding: 10px 12px;
         }
 
+        /* Grade band sections */
+        .grade-band-section {
+            display: none;
+            margin-bottom: 28px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #557a3e;
+        }
+
+        .grade-band-section.visible {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .grade-band-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #557a3e;
+            margin-bottom: 16px;
+        }
+
+        .grade-band-section .question {
+            margin-bottom: 20px;
+        }
+
+        .grade-band-section .question:last-child {
+            margin-bottom: 0;
+        }
+
         /* Searchable Select */
         .search-select-container {
             position: relative;
@@ -234,50 +295,15 @@
             resize: vertical;
         }
 
-        /* Matrix table */
-        .matrix-container {
-            overflow-x: auto;
+        /* Concern checklist */
+        .concern-checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .matrix-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        .matrix-table th {
-            padding: 12px 8px;
-            text-align: center;
-            font-weight: 500;
-            color: #555;
-            font-size: 0.8rem;
-            background: #f8f9fa;
-        }
-
-        .matrix-table th:first-child {
-            text-align: left;
-            min-width: 200px;
-        }
-
-        .matrix-table td {
-            padding: 15px 8px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .matrix-table td:first-child {
-            text-align: left;
-            font-weight: 400;
-        }
-
-        .matrix-table input[type="radio"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-
-        .matrix-table tr:hover {
-            background: #f8f9fa;
+        .concern-checklist .option-item {
+            padding: 10px 15px;
         }
 
         /* Conditional fields */
@@ -362,6 +388,18 @@
             margin-bottom: 10px;
         }
 
+        /* Validation error */
+        .validation-error {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .validation-error.visible {
+            display: block;
+        }
+
         /* Mobile adjustments */
         @media (max-width: 600px) {
             body {
@@ -380,12 +418,6 @@
                 padding: 20px;
             }
 
-            .matrix-table th,
-            .matrix-table td {
-                padding: 10px 4px;
-                font-size: 0.8rem;
-            }
-
             .grade-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -399,6 +431,11 @@
             <p>Parent/Caregiver Survey</p>
         </div>
 
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-label" id="progressLabel">Section 1 of 6</div>
+
         <div class="survey-body">
             <!-- Intro Section -->
             <div class="intro-section" style="margin-bottom: 30px; padding: 20px; background: #f0ebe3; border-radius: 8px; border-left: 4px solid #557a3e;">
@@ -410,7 +447,7 @@
             </div>
             <form id="surveyForm">
                 <!-- Section 1: About Your School -->
-                <div class="section">
+                <div class="section" data-section="1">
                     <h2 class="section-title">Section 1: About Your School</h2>
 
                     <!-- Q1: School Type -->
@@ -441,6 +478,7 @@
                             <div class="dropdown-list" id="countyDropdown"></div>
                             <input type="hidden" name="county" id="countyValue">
                         </div>
+                        <div class="validation-error" id="countyError">Please select a county.</div>
                     </div>
 
                     <!-- Q3a: District (public) -->
@@ -451,6 +489,7 @@
                             <div class="dropdown-list" id="districtDropdown"></div>
                             <input type="hidden" name="district" id="districtValue">
                         </div>
+                        <div class="validation-error" id="districtError">Please select a school district.</div>
                     </div>
 
                     <!-- Q3a Other -->
@@ -470,59 +509,59 @@
                         <span class="question-label required">What grade level(s) are your children currently in? (Check all that apply)</span>
                         <div class="options-list grade-grid">
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-prek" value="Pre-K">
+                                <input type="checkbox" name="grades" id="grade-prek" value="Pre-K" data-band="K-2">
                                 <label for="grade-prek">Pre-K</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-k" value="Kindergarten">
+                                <input type="checkbox" name="grades" id="grade-k" value="Kindergarten" data-band="K-2">
                                 <label for="grade-k">Kindergarten</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-1" value="1st grade">
+                                <input type="checkbox" name="grades" id="grade-1" value="1st grade" data-band="K-2">
                                 <label for="grade-1">1st grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-2" value="2nd grade">
+                                <input type="checkbox" name="grades" id="grade-2" value="2nd grade" data-band="K-2">
                                 <label for="grade-2">2nd grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-3" value="3rd grade">
+                                <input type="checkbox" name="grades" id="grade-3" value="3rd grade" data-band="3-5">
                                 <label for="grade-3">3rd grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-4" value="4th grade">
+                                <input type="checkbox" name="grades" id="grade-4" value="4th grade" data-band="3-5">
                                 <label for="grade-4">4th grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-5" value="5th grade">
+                                <input type="checkbox" name="grades" id="grade-5" value="5th grade" data-band="3-5">
                                 <label for="grade-5">5th grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-6" value="6th grade">
+                                <input type="checkbox" name="grades" id="grade-6" value="6th grade" data-band="6-8">
                                 <label for="grade-6">6th grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-7" value="7th grade">
+                                <input type="checkbox" name="grades" id="grade-7" value="7th grade" data-band="6-8">
                                 <label for="grade-7">7th grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-8" value="8th grade">
+                                <input type="checkbox" name="grades" id="grade-8" value="8th grade" data-band="6-8">
                                 <label for="grade-8">8th grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-9" value="9th grade">
+                                <input type="checkbox" name="grades" id="grade-9" value="9th grade" data-band="9-12">
                                 <label for="grade-9">9th grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-10" value="10th grade">
+                                <input type="checkbox" name="grades" id="grade-10" value="10th grade" data-band="9-12">
                                 <label for="grade-10">10th grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-11" value="11th grade">
+                                <input type="checkbox" name="grades" id="grade-11" value="11th grade" data-band="9-12">
                                 <label for="grade-11">11th grade</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="grades" id="grade-12" value="12th grade">
+                                <input type="checkbox" name="grades" id="grade-12" value="12th grade" data-band="9-12">
                                 <label for="grade-12">12th grade</label>
                             </div>
                         </div>
@@ -572,7 +611,7 @@
                         <input type="text" name="deviceStorageOther" id="deviceStorageOther" placeholder="Describe where devices are stored...">
                     </div>
 
-                    <!-- Q5d: Device Type (conditional) -->
+                    <!-- Q5d: Device Type (conditional - shown for both 1:1 and shared) -->
                     <div class="question conditional" id="deviceTypeQuestion">
                         <span class="question-label required">What type of devices? (Check all that apply)</span>
                         <div class="options-list">
@@ -643,68 +682,68 @@
                 </div>
 
                 <!-- Section 2: Current Experience -->
-                <div class="section">
+                <div class="section" data-section="2">
                     <h2 class="section-title">Section 2: Current Experience</h2>
 
-                    <!-- Q5: Satisfaction -->
-                    <div class="question">
-                        <span class="question-label required">How satisfied are you with the current level of screen and device use in your child's school?</span>
-                        <div class="options-list">
-                            <div class="option-item">
-                                <input type="radio" name="satisfaction" id="sat-1" value="Very dissatisfied" required>
-                                <label for="sat-1">Very dissatisfied</label>
-                            </div>
-                            <div class="option-item">
-                                <input type="radio" name="satisfaction" id="sat-2" value="Dissatisfied">
-                                <label for="sat-2">Dissatisfied</label>
-                            </div>
-                            <div class="option-item">
-                                <input type="radio" name="satisfaction" id="sat-3" value="Neutral">
-                                <label for="sat-3">Neutral</label>
-                            </div>
-                            <div class="option-item">
-                                <input type="radio" name="satisfaction" id="sat-4" value="Satisfied">
-                                <label for="sat-4">Satisfied</label>
-                            </div>
-                            <div class="option-item">
-                                <input type="radio" name="satisfaction" id="sat-5" value="Very satisfied">
-                                <label for="sat-5">Very satisfied</label>
+                    <!-- Grade band intro (shown when multiple bands) -->
+                    <p id="gradeBandIntro" style="display: none; margin-bottom: 20px; font-size: 0.95rem; color: #555; font-style: italic;">
+                        Since your children span multiple grade levels, we'd like to know how you feel about screen time for each age group.
+                    </p>
+
+                    <!-- Grade band repeated questions - dynamically shown -->
+                    <div class="grade-band-section" id="band-K-2" data-band="K-2">
+                        <h3>Thinking about your child(ren) in grades K–2:</h3>
+                        <div class="question">
+                            <span class="question-label required">How do you feel about the amount of screen time in school?</span>
+                            <div class="options-list">
+                                <div class="option-item"><input type="radio" name="deviceTime_K-2" value="Too much"><label>Too much</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_K-2" value="Just right"><label>Just right</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_K-2" value="Not enough"><label>Not enough</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_K-2" value="No opinion"><label>No opinion</label></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Q6: Device Time -->
-                    <div class="question">
-                        <span class="question-label required">Do you feel your child spends too much, too little, or the right amount of time on devices during the school day?</span>
-                        <div class="options-list">
-                            <div class="option-item">
-                                <input type="radio" name="deviceTime" id="time-1" value="Far too much" required>
-                                <label for="time-1">Far too much</label>
-                            </div>
-                            <div class="option-item">
-                                <input type="radio" name="deviceTime" id="time-2" value="Somewhat too much">
-                                <label for="time-2">Somewhat too much</label>
-                            </div>
-                            <div class="option-item">
-                                <input type="radio" name="deviceTime" id="time-3" value="About the right amount">
-                                <label for="time-3">About the right amount</label>
-                            </div>
-                            <div class="option-item">
-                                <input type="radio" name="deviceTime" id="time-4" value="Somewhat too little">
-                                <label for="time-4">Somewhat too little</label>
-                            </div>
-                            <div class="option-item">
-                                <input type="radio" name="deviceTime" id="time-5" value="Far too little">
-                                <label for="time-5">Far too little</label>
-                            </div>
-                            <div class="option-item">
-                                <input type="radio" name="deviceTime" id="time-6" value="I'm not sure">
-                                <label for="time-6">I'm not sure</label>
+                    <div class="grade-band-section" id="band-3-5" data-band="3-5">
+                        <h3>Thinking about your child(ren) in grades 3–5:</h3>
+                        <div class="question">
+                            <span class="question-label required">How do you feel about the amount of screen time in school?</span>
+                            <div class="options-list">
+                                <div class="option-item"><input type="radio" name="deviceTime_3-5" value="Too much"><label>Too much</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_3-5" value="Just right"><label>Just right</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_3-5" value="Not enough"><label>Not enough</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_3-5" value="No opinion"><label>No opinion</label></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Q7: Communication -->
+                    <div class="grade-band-section" id="band-6-8" data-band="6-8">
+                        <h3>Thinking about your child(ren) in grades 6–8:</h3>
+                        <div class="question">
+                            <span class="question-label required">How do you feel about the amount of screen time in school?</span>
+                            <div class="options-list">
+                                <div class="option-item"><input type="radio" name="deviceTime_6-8" value="Too much"><label>Too much</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_6-8" value="Just right"><label>Just right</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_6-8" value="Not enough"><label>Not enough</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_6-8" value="No opinion"><label>No opinion</label></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grade-band-section" id="band-9-12" data-band="9-12">
+                        <h3>Thinking about your child(ren) in grades 9–12:</h3>
+                        <div class="question">
+                            <span class="question-label required">How do you feel about the amount of screen time in school?</span>
+                            <div class="options-list">
+                                <div class="option-item"><input type="radio" name="deviceTime_9-12" value="Too much"><label>Too much</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_9-12" value="Just right"><label>Just right</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_9-12" value="Not enough"><label>Not enough</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_9-12" value="No opinion"><label>No opinion</label></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Communication (shared across all grades) -->
                     <div class="question">
                         <span class="question-label required">How well does your school communicate its technology and screen time policies to families?</span>
                         <div class="options-list">
@@ -731,7 +770,7 @@
                         </div>
                     </div>
 
-                    <!-- Q8: Working Well -->
+                    <!-- Working Well -->
                     <div class="question">
                         <span class="question-label">If the current technology policies are working well for your family, please share what aspects you appreciate and why they are successful. <span class="optional-tag">(Optional)</span></span>
                         <textarea name="workingWell" id="workingWell" placeholder="Share your thoughts..."></textarea>
@@ -739,95 +778,82 @@
                 </div>
 
                 <!-- Section 3: Concerns -->
-                <div class="section">
+                <div class="section" data-section="3">
                     <h2 class="section-title">Section 3: Concerns</h2>
 
-                    <!-- Q9: Concerns Matrix -->
+                    <!-- Q9: Concern Gate -->
                     <div class="question">
-                        <span class="question-label required">How concerned are you about the following aspects of school technology use?</span>
-                        <div class="matrix-container">
-                            <table class="matrix-table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Not concerned</th>
-                                        <th>Slightly concerned</th>
-                                        <th>Moderately concerned</th>
-                                        <th>Very concerned</th>
-                                        <th>Extremely concerned</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Impact on attention span and focus</td>
-                                        <td><input type="radio" name="concern_attention" value="Not concerned" required></td>
-                                        <td><input type="radio" name="concern_attention" value="Slightly concerned"></td>
-                                        <td><input type="radio" name="concern_attention" value="Moderately concerned"></td>
-                                        <td><input type="radio" name="concern_attention" value="Very concerned"></td>
-                                        <td><input type="radio" name="concern_attention" value="Extremely concerned"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Impact on social skills and peer interaction</td>
-                                        <td><input type="radio" name="concern_social" value="Not concerned" required></td>
-                                        <td><input type="radio" name="concern_social" value="Slightly concerned"></td>
-                                        <td><input type="radio" name="concern_social" value="Moderately concerned"></td>
-                                        <td><input type="radio" name="concern_social" value="Very concerned"></td>
-                                        <td><input type="radio" name="concern_social" value="Extremely concerned"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Eye strain or physical health effects</td>
-                                        <td><input type="radio" name="concern_health" value="Not concerned" required></td>
-                                        <td><input type="radio" name="concern_health" value="Slightly concerned"></td>
-                                        <td><input type="radio" name="concern_health" value="Moderately concerned"></td>
-                                        <td><input type="radio" name="concern_health" value="Very concerned"></td>
-                                        <td><input type="radio" name="concern_health" value="Extremely concerned"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Exposure to inappropriate content</td>
-                                        <td><input type="radio" name="concern_content" value="Not concerned" required></td>
-                                        <td><input type="radio" name="concern_content" value="Slightly concerned"></td>
-                                        <td><input type="radio" name="concern_content" value="Moderately concerned"></td>
-                                        <td><input type="radio" name="concern_content" value="Very concerned"></td>
-                                        <td><input type="radio" name="concern_content" value="Extremely concerned"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Data privacy and security</td>
-                                        <td><input type="radio" name="concern_privacy" value="Not concerned" required></td>
-                                        <td><input type="radio" name="concern_privacy" value="Slightly concerned"></td>
-                                        <td><input type="radio" name="concern_privacy" value="Moderately concerned"></td>
-                                        <td><input type="radio" name="concern_privacy" value="Very concerned"></td>
-                                        <td><input type="radio" name="concern_privacy" value="Extremely concerned"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Reduced time for hands-on, collaborative, or outdoor learning</td>
-                                        <td><input type="radio" name="concern_handson" value="Not concerned" required></td>
-                                        <td><input type="radio" name="concern_handson" value="Slightly concerned"></td>
-                                        <td><input type="radio" name="concern_handson" value="Moderately concerned"></td>
-                                        <td><input type="radio" name="concern_handson" value="Very concerned"></td>
-                                        <td><input type="radio" name="concern_handson" value="Extremely concerned"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Screens replacing paper/pencil learning (reading, note taking, creative work, etc.)</td>
-                                        <td><input type="radio" name="concern_paperpencil" value="Not concerned" required></td>
-                                        <td><input type="radio" name="concern_paperpencil" value="Slightly concerned"></td>
-                                        <td><input type="radio" name="concern_paperpencil" value="Moderately concerned"></td>
-                                        <td><input type="radio" name="concern_paperpencil" value="Very concerned"></td>
-                                        <td><input type="radio" name="concern_paperpencil" value="Extremely concerned"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <span class="question-label required">Do you have any concerns about <strong>how</strong> school-issued devices and technology are being used?</span>
+                        <div class="options-list">
+                            <div class="option-item">
+                                <input type="radio" name="hasConcerns" id="concerns-yes" value="Yes" required>
+                                <label for="concerns-yes">Yes</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="radio" name="hasConcerns" id="concerns-no" value="No">
+                                <label for="concerns-no">No</label>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Q10: Other Concerns -->
-                    <div class="question">
-                        <span class="question-label">Are there other concerns you have regarding technology, screens, or internet-enabled devices in school that are not listed above? <span class="optional-tag">(Optional)</span></span>
-                        <textarea name="otherConcerns" id="otherConcerns" placeholder="Share any additional concerns..."></textarea>
+                    <!-- Q9b: Concern Checklist (conditional on Yes) -->
+                    <div class="question conditional" id="concernListQuestion">
+                        <span class="question-label">Which of the following concern you? (Check all that apply)</span>
+                        <div class="concern-checklist">
+                            <div class="option-item">
+                                <input type="checkbox" name="concerns" id="concern-attention" value="Impact on attention span and focus">
+                                <label for="concern-attention">Impact on attention span and focus</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" name="concerns" id="concern-social" value="Impact on social skills and peer interaction">
+                                <label for="concern-social">Impact on social skills and peer interaction</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" name="concerns" id="concern-health" value="Eye strain or physical health effects">
+                                <label for="concern-health">Eye strain or physical health effects</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" name="concerns" id="concern-content" value="Exposure to inappropriate content despite school filters">
+                                <label for="concern-content">Exposure to inappropriate content despite school filters</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" name="concerns" id="concern-privacy" value="Data privacy and security">
+                                <label for="concern-privacy">Data privacy and security</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" name="concerns" id="concern-replacing" value="Screens replacing hands-on learning, paper-and-pencil work, and handwriting">
+                                <label for="concern-replacing">Screens replacing hands-on learning, paper-and-pencil work, and handwriting</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" name="concerns" id="concern-nonacademic" value="Non-academic device use during class, including as rewards or 'brain breaks'">
+                                <label for="concern-nonacademic">Non-academic device use during class, including as rewards or "brain breaks"</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" name="concerns" id="concern-homescreen" value="School devices undermining family screen time rules at home">
+                                <label for="concern-homescreen">School devices undermining family screen time rules at home</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" name="concerns" id="concern-other" value="Other">
+                                <label for="concern-other">Other</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q9c: Other concern text (conditional on Other checked) -->
+                    <div class="question conditional" id="concernOtherQuestion">
+                        <span class="question-label">Please describe your other concern:</span>
+                        <input type="text" name="concernOther" id="concernOther" placeholder="Describe your concern...">
+                    </div>
+
+                    <!-- Q10: Free text -->
+                    <div class="question conditional" id="concernDetailQuestion">
+                        <span class="question-label">Is there anything else you'd like to share about your concerns? <span class="optional-tag">(Optional)</span></span>
+                        <textarea name="concernDetails" id="concernDetails" placeholder="Share any additional thoughts..."></textarea>
                     </div>
                 </div>
 
                 <!-- Section 4: Policy Preferences -->
-                <div class="section">
+                <div class="section" data-section="4">
                     <h2 class="section-title">Section 4: Policy Preferences</h2>
 
                     <!-- Q11: Policy Requests -->
@@ -835,44 +861,40 @@
                         <span class="question-label required">Which of the following requests would you support? (Check all that apply)</span>
                         <div class="options-list">
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-1" value="Reconsider the 1:1 device model by grade level">
-                                <label for="policy-1"><strong>Reconsider the 1:1 device model by grade level</strong><span class="option-description">No 1:1 devices for the youngest students; reduced device dependence in elementary and middle school</span></label>
+                                <input type="checkbox" name="policies" id="policy-1" value="Reconsider the 1:1 device model and return to shared devices in K-8">
+                                <label for="policy-1"><strong>Reconsider the 1:1 device model and return to shared devices in K-8</strong><span class="option-description">Replace 1:1 devices with shared options (e.g., computer carts or labs) through elementary and middle school</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-2" value="Paper-and-pencil homework only for PK-8">
-                                <label for="policy-2"><strong>Paper-and-pencil homework only for PK–8</strong><span class="option-description">School-issued devices remain at school; homework does not require screens</span></label>
+                                <input type="checkbox" name="policies" id="policy-1b" value="Keep school devices at school in elementary, limit take-home in middle school">
+                                <label for="policy-1b"><strong>Keep school devices at school in elementary, limit take-home in middle school</strong><span class="option-description">Devices always stay at school in elementary; sent home only when needed for specific assignments in middle school</span></label>
+                            </div>
+                            <div class="option-item policy-option">
+                                <input type="checkbox" name="policies" id="policy-2" value="Paper-and-pencil homework only for elementary school">
+                                <label for="policy-2"><strong>Paper-and-pencil homework only for elementary school</strong><span class="option-description">School-issued devices remain at school; homework does not require screens</span></label>
                             </div>
                             <div class="option-item policy-option">
                                 <input type="checkbox" name="policies" id="policy-3" value="Prohibit recreational screen use during the school day">
-                                <label for="policy-3"><strong>Prohibit recreational screen use during the school day</strong><span class="option-description">No Chromebook/iPad use before school, during lunch, recess, or downtime; block YouTube and video games</span></label>
+                                <label for="policy-3"><strong>Prohibit recreational screen use during the school day</strong><span class="option-description">No Chromebook/iPad use before school, during lunch, recess, or downtime</span></label>
                             </div>
                             <div class="option-item policy-option">
                                 <input type="checkbox" name="policies" id="policy-4" value="Require explicit opt-in for generative AI tools">
                                 <label for="policy-4"><strong>Require explicit opt-in for generative AI tools</strong><span class="option-description">Parental consent required before students use AI tools, with clear disclosure of purpose and data use</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-5" value="Guarantee a meaningful opt-out from EdTech">
-                                <label for="policy-5"><strong>Guarantee a meaningful opt-out from EdTech</strong><span class="option-description">A clear, penalty-free pathway for families to opt out of educational technology</span></label>
+                                <input type="checkbox" name="policies" id="policy-5" value="Guarantee right to opt out of unproven EdTech and AI">
+                                <label for="policy-5"><strong>Guarantee right to opt out of unproven EdTech and AI</strong><span class="option-description">A clear, penalty-free pathway for families to opt out of educational technology and AI tools that have not been proven safe or effective for student learning</span></label>
                             </div>
                             <div class="option-item policy-option">
                                 <input type="checkbox" name="policies" id="policy-6" value="Parental consent for each data-collecting app or website">
-                                <label for="policy-6"><strong>Parental consent for each data-collecting app or website</strong><span class="option-description">Individual consent required for each app/site that collects student data (per updated COPPA guidance)</span></label>
+                                <label for="policy-6"><strong>Parental consent for each data-collecting app or website</strong><span class="option-description">Individual consent required for each app/site that collects student data</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-7" value="Weekly parent reports of student online activity">
-                                <label for="policy-7"><strong>Weekly parent reports of student online activity</strong><span class="option-description">Reports showing time spent on devices and which apps/websites were accessed</span></label>
+                                <input type="checkbox" name="policies" id="policy-7" value="Parental access to student device activity">
+                                <label for="policy-7"><strong>Parental access to student device activity</strong><span class="option-description">Access to information about daily screen time and which apps/websites were accessed on school-issued devices</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-8" value="Increase community input and transparency">
-                                <label for="policy-8"><strong>Increase community input and transparency</strong><span class="option-description">Regular surveys, Town Hall meetings, and parent participation in Technology Committee decisions</span></label>
-                            </div>
-                            <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-9" value="Support low-tech alternatives for teachers and students">
-                                <label for="policy-9"><strong>Support low-tech alternatives for teachers and students</strong><span class="option-description">Planning time, professional support, and resources for teachers to offer non-digital options</span></label>
-                            </div>
-                            <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-10" value="Bell-to-bell personal device policy">
-                                <label for="policy-10"><strong>Bell-to-bell personal device policy</strong><span class="option-description">Personal devices stored away from students throughout the school day to reduce distraction, promote focus, and support social-emotional learning through face-to-face connection</span></label>
+                                <input type="checkbox" name="policies" id="policy-9" value="Invest in teacher training and resources for non-digital instruction">
+                                <label for="policy-9"><strong>Invest in teacher training and resources for non-digital instruction</strong><span class="option-description">Ensure teachers are trained and supported to offer paper-based, hands-on, and collaborative alternatives to screen-based assignments</span></label>
                             </div>
                             <div class="option-item policy-option">
                                 <input type="checkbox" name="policies" id="policy-other" value="Other">
@@ -889,7 +911,7 @@
                 </div>
 
                 <!-- Section 5: Share Your Story -->
-                <div class="section">
+                <div class="section" data-section="5">
                     <h2 class="section-title">Section 5: Share Your Story (Optional)</h2>
 
                     <!-- Q12: Experienced Harm -->
@@ -934,7 +956,7 @@
                 </div>
 
                 <!-- Section 6: Educator/Healthcare Provider Follow-up -->
-                <div class="section">
+                <div class="section" data-section="6">
                     <h2 class="section-title">Section 6: For Educators & Healthcare Providers</h2>
 
                     <!-- Educator/Healthcare Question -->
@@ -1074,6 +1096,15 @@
 
         const counties = Object.keys(paDistricts).sort();
 
+        // Grade band definitions
+        const gradeBands = ['K-2', '3-5', '6-8', '9-12'];
+        const gradeBandLabels = {
+            'K-2': 'K–2',
+            '3-5': '3–5',
+            '6-8': '6–8',
+            '9-12': '9–12'
+        };
+
         // DOM Elements
         const form = document.getElementById('surveyForm');
         const countyQuestion = document.getElementById('countyQuestion');
@@ -1099,6 +1130,57 @@
         const educatorEmailQuestion = document.getElementById('educatorEmailQuestion');
         const submitBtn = document.getElementById('submitBtn');
         const successMessage = document.getElementById('successMessage');
+        const progressBar = document.getElementById('progressBar');
+        const progressLabel = document.getElementById('progressLabel');
+        const gradeBandIntro = document.getElementById('gradeBandIntro');
+
+        // Progress tracking
+        function updateProgress() {
+            const sections = document.querySelectorAll('.section[data-section]');
+            const totalSections = sections.length;
+            let currentSection = 1;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.5) {
+                    currentSection = parseInt(section.dataset.section);
+                }
+            });
+
+            const progress = (currentSection / totalSections) * 100;
+            progressBar.style.width = progress + '%';
+            progressLabel.textContent = `Section ${currentSection} of ${totalSections}`;
+        }
+
+        window.addEventListener('scroll', updateProgress);
+
+        // Grade band visibility
+        function updateGradeBands() {
+            const checkedGrades = document.querySelectorAll('input[name="grades"]:checked');
+            const activeBands = new Set();
+
+            checkedGrades.forEach(cb => {
+                activeBands.add(cb.dataset.band);
+            });
+
+            gradeBands.forEach(band => {
+                const section = document.getElementById('band-' + band);
+                if (activeBands.has(band)) {
+                    section.classList.add('visible');
+                } else {
+                    section.classList.remove('visible');
+                    // Clear selections when band is hidden
+                    section.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+                }
+            });
+
+            // Show intro text when multiple bands are active
+            gradeBandIntro.style.display = activeBands.size > 1 ? 'block' : 'none';
+        }
+
+        document.querySelectorAll('input[name="grades"]').forEach(cb => {
+            cb.addEventListener('change', updateGradeBands);
+        });
 
         // Initialize county dropdown
         function initCountyDropdown() {
@@ -1116,9 +1198,9 @@
             countySearch.value = county;
             countyValue.value = county;
             countyDropdown.classList.remove('open');
+            document.getElementById('countyError').classList.remove('visible');
             updateDistrictDropdown(county);
 
-            // Show district question if public school
             const schoolType = document.querySelector('input[name="schoolType"]:checked');
             if (schoolType && schoolType.value === 'Public school') {
                 districtQuestion.classList.add('visible');
@@ -1143,8 +1225,8 @@
             districtSearch.value = district;
             districtValue.value = district;
             districtDropdown.classList.remove('open');
+            document.getElementById('districtError').classList.remove('visible');
 
-            // Show other field if "Other" selected
             if (district === 'Other - please specify') {
                 districtOtherQuestion.classList.add('visible');
             } else {
@@ -1213,19 +1295,16 @@
         document.querySelectorAll('input[name="schoolType"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
                 if (e.target.value === 'Public school') {
-                    // Show county and district, hide school name
                     countyQuestion.classList.add('visible');
                     schoolNameQuestion.classList.remove('visible');
                     if (countyValue.value) {
                         districtQuestion.classList.add('visible');
                     }
                 } else {
-                    // Private or Charter: hide county and district, show school name
                     countyQuestion.classList.remove('visible');
                     districtQuestion.classList.remove('visible');
                     districtOtherQuestion.classList.remove('visible');
                     schoolNameQuestion.classList.add('visible');
-                    // Clear county/district values
                     countySearch.value = '';
                     countyValue.value = '';
                     districtSearch.value = '';
@@ -1244,8 +1323,7 @@
                     deviceStorageOtherQuestion.classList.remove('visible');
                 } else if (e.target.value === 'No — devices are shared') {
                     deviceStorageQuestion.classList.add('visible');
-                    deviceTypeQuestion.classList.remove('visible');
-                    deviceOtherQuestion.classList.remove('visible');
+                    deviceTypeQuestion.classList.add('visible');
                     devicesHomeQuestion.classList.remove('visible');
                     startingGradeQuestion.classList.remove('visible');
                 } else {
@@ -1312,7 +1390,7 @@
             });
         });
 
-        // Profession question handler (educator/healthcare)
+        // Profession question handler
         document.querySelectorAll('input[name="profession"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
                 if (e.target.value === 'K-12 Educator' || e.target.value === 'Healthcare provider' || e.target.value === 'Both') {
@@ -1335,9 +1413,45 @@
             });
         });
 
+        // Concern gate handler
+        const concernListQuestion = document.getElementById('concernListQuestion');
+        const concernDetailQuestion = document.getElementById('concernDetailQuestion');
+        const concernOtherQuestion = document.getElementById('concernOtherQuestion');
+
+        document.querySelectorAll('input[name="hasConcerns"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'Yes') {
+                    concernListQuestion.classList.add('visible');
+                    concernDetailQuestion.classList.add('visible');
+                } else {
+                    concernListQuestion.classList.remove('visible');
+                    concernDetailQuestion.classList.remove('visible');
+                    concernOtherQuestion.classList.remove('visible');
+                    // Uncheck all concern checkboxes
+                    document.querySelectorAll('input[name="concerns"]').forEach(cb => cb.checked = false);
+                }
+            });
+        });
+
+        // Concern "Other" checkbox handler
+        document.getElementById('concern-other').addEventListener('change', (e) => {
+            if (e.target.checked) {
+                concernOtherQuestion.classList.add('visible');
+            } else {
+                concernOtherQuestion.classList.remove('visible');
+            }
+        });
+
         // Form submission
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            // Check for duplicate submission
+            if (localStorage.getItem('edtech-survey-submitted')) {
+                if (!confirm('It looks like you already submitted a response. Would you like to submit another one? (e.g., for a different school or district)')) {
+                    return;
+                }
+            }
 
             // Validate at least one grade is selected
             const grades = document.querySelectorAll('input[name="grades"]:checked');
@@ -1346,18 +1460,65 @@
                 return;
             }
 
+            // Validate county/district for public schools
+            const schoolType = document.querySelector('input[name="schoolType"]:checked');
+            if (schoolType && schoolType.value === 'Public school') {
+                let valid = true;
+                if (!countyValue.value) {
+                    document.getElementById('countyError').classList.add('visible');
+                    valid = false;
+                }
+                if (!districtValue.value) {
+                    document.getElementById('districtError').classList.add('visible');
+                    valid = false;
+                }
+                if (!valid) {
+                    document.getElementById('countyQuestion').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+            }
+
+            // Validate grade band questions are answered for visible bands
+            const visibleBands = document.querySelectorAll('.grade-band-section.visible');
+            for (const bandSection of visibleBands) {
+                const band = bandSection.dataset.band;
+                const timeAnswer = document.querySelector(`input[name="deviceTime_${band}"]:checked`);
+                if (!timeAnswer) {
+                    alert(`Please answer the device time question for grades ${gradeBandLabels[band]}.`);
+                    bandSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+            }
+
             // Collect form data
             const formData = new FormData(form);
             const data = {};
 
-            // Handle checkboxes (grades, deviceTypes, and policies)
+            // Handle checkboxes
             data.grades = Array.from(document.querySelectorAll('input[name="grades"]:checked')).map(cb => cb.value).join(', ');
             data.deviceTypes = Array.from(document.querySelectorAll('input[name="deviceTypes"]:checked')).map(cb => cb.value).join(', ');
             data.policies = Array.from(document.querySelectorAll('input[name="policies"]:checked')).map(cb => cb.value).join(', ');
 
+            // Handle grade band responses
+            const activeBands = [];
+            gradeBands.forEach(band => {
+                const section = document.getElementById('band-' + band);
+                if (section.classList.contains('visible')) {
+                    activeBands.push(band);
+                    data['deviceTime_' + band] = document.querySelector(`input[name="deviceTime_${band}"]:checked`)?.value || '';
+                }
+            });
+            data.activeBands = activeBands.join(', ');
+
+            // Handle concerns
+            data.hasConcerns = document.querySelector('input[name="hasConcerns"]:checked')?.value || '';
+            data.concerns = Array.from(document.querySelectorAll('input[name="concerns"]:checked')).map(cb => cb.value).join(', ');
+
             // Handle other form fields
             for (let [key, value] of formData.entries()) {
-                if (key !== 'grades' && key !== 'deviceTypes' && key !== 'policies') {
+                if (key !== 'grades' && key !== 'deviceTypes' && key !== 'policies'
+                    && key !== 'concerns' && key !== 'hasConcerns'
+                    && !key.startsWith('deviceTime_')) {
                     data[key] = value;
                 }
             }
@@ -1367,20 +1528,13 @@
 
             console.log('Survey Data:', data);
 
-            // ============================================================
-            // GOOGLE SHEETS INTEGRATION
-            // Replace the URL below with your Google Apps Script Web App URL
-            // See google-sheets-setup.md for instructions
-            // ============================================================
-            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnSpPQS_oxi3NdqvOioGLA9qq3ka2MP3H3d0R8aeJkVKJqSHofFLvV9kXacnnuiAGO/exec';
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw96z3uNBZaJALW94fXH8xgymMpiTRI-xHGyifZEsnLwA48bbWlekrS_YRWMPbBVByd/exec';
 
             if (GOOGLE_SCRIPT_URL === 'PASTE_YOUR_WEB_APP_URL_HERE') {
-                // Demo mode - just show success without saving
                 console.log('Demo mode: Data not saved. Set GOOGLE_SCRIPT_URL to enable saving.');
                 form.style.display = 'none';
                 successMessage.classList.add('visible');
             } else {
-                // Production mode - save to Google Sheets
                 try {
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Submitting...';
@@ -1394,6 +1548,7 @@
                         body: JSON.stringify(data)
                     });
 
+                    localStorage.setItem('edtech-survey-submitted', 'true');
                     form.style.display = 'none';
                     successMessage.classList.add('visible');
                 } catch (error) {
@@ -1407,6 +1562,7 @@
 
         // Initialize
         initCountyDropdown();
+        updateProgress();
     </script>
 </body>
 </html>
