@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Screen Time and Technology Use in PA Schools — Parent/Caregiver Survey</title>
-    <meta name="description" content="Share your perspective on technology and screen time in Pennsylvania schools. Help build a public dashboard of parent feedback across school districts.">
+    <title>Screen Time and Technology Use in CA Schools — Parent/Caregiver Survey</title>
+    <meta name="description"
+        content="Share your perspective on technology and screen time in California schools. Help build a public dashboard of parent feedback across school districts.">
     <meta property="og:title" content="Perspectives on Technology & Screen Time in School">
-    <meta property="og:description" content="A parent/caregiver survey to understand how families across Pennsylvania feel about technology and screen time in schools.">
+    <meta property="og:description"
+        content="A parent/caregiver survey to understand how families across California feel about technology and screen time in schools.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://survey.paunplugged.org">
-    <meta property="og:image" content="https://survey.paunplugged.org/og-image.png?v=2">
+    <meta property="og:url" content="https://survey.distractionfreeschoolsca.org">
+    <meta property="og:image" content="https://survey.distractionfreeschoolsca.org/og-image.png?v=2">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Perspectives on Technology & Screen Time in School">
-    <meta name="twitter:description" content="Share your perspective on technology and screen time in Pennsylvania schools.">
-    <meta name="twitter:image" content="https://survey.paunplugged.org/og-image.png?v=2">
+    <meta name="twitter:description"
+        content="Share your perspective on technology and screen time in California schools.">
+    <meta name="twitter:image" content="https://survey.distractionfreeschoolsca.org/og-image.png?v=2">
     <style>
         * {
             box-sizing: border-box;
@@ -36,7 +40,7 @@
             margin: 0 auto;
             background: white;
             border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
 
@@ -321,8 +325,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Policy checkboxes */
@@ -428,13 +439,16 @@
         }
     </style>
 </head>
+
 <body>
     <div class="survey-container">
         <div class="survey-header">
-            <h1 data-i18n="header-title">Screen Time and Technology Use in PA Schools</h1>
+            <h1 data-i18n="header-title">Screen Time and Technology Use in CA Schools</h1>
             <p data-i18n="header-subtitle">A survey for parents &amp; caregivers</p>
             <div style="margin-top: 16px;">
-                <button type="button" id="langToggle" onclick="setLanguage(currentLang === 'en' ? 'es' : 'en')" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.6); border-radius: 20px; padding: 6px 18px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s;"><span id="langToggleLabel">Ver en Español</span></button>
+                <button type="button" id="langToggle" onclick="setLanguage(currentLang === 'en' ? 'es' : 'en')"
+                    style="background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.6); border-radius: 20px; padding: 6px 18px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s;"><span
+                        id="langToggleLabel">Ver en Español</span></button>
             </div>
         </div>
 
@@ -445,11 +459,22 @@
 
         <div class="survey-body">
             <!-- Intro Section -->
-            <div class="intro-section" style="margin-bottom: 30px; padding: 20px; background: #f0ebe3; border-radius: 8px; border-left: 4px solid #557a3e;">
+            <div class="intro-section"
+                style="margin-bottom: 30px; padding: 20px; background: #f0ebe3; border-radius: 8px; border-left: 4px solid #557a3e;">
                 <p style="margin-bottom: 12px;" data-i18n="intro-welcome"><strong>Welcome!</strong></p>
-                <p style="margin-bottom: 12px;" data-i18n="intro-p1">The team at <a href="https://paunplugged.org" style="color: #557a3e;">PA Unplugged</a> designed this survey to understand how parents and caregivers across Pennsylvania feel about technology and screen time in schools.</p>
-                <p style="margin-bottom: 12px;" data-i18n="intro-p2">Every community is different, and families bring a wide range of experiences and perspectives. This survey is designed to capture that diversity. Your responses will help us build a public dashboard where you can explore and compare feedback across school districts throughout the state. The goal is to give families, educators, and policymakers a clearer picture of how communities are thinking about these important issues.</p>
-                <p style="margin-bottom: 0;" data-i18n="intro-p3">The survey takes about 5 minutes. If you have any questions, reach out to us at <a href="mailto:hello@paunplugged.org" style="color: #557a3e;">hello@paunplugged.org</a>. Thank you for your time.</p>
+                <p style="margin-bottom: 12px;" data-i18n="intro-p1">The team at <a
+                        href="https://www.distractionfreeschoolsca.org/" style="color: #557a3e;">Distraction Free
+                        Schools CA</a>
+                    designed this survey to understand how parents and caregivers across California feel about
+                    technology and screen time in schools.</p>
+                <p style="margin-bottom: 12px;" data-i18n="intro-p2">Every community is different, and families bring a
+                    wide range of experiences and perspectives. This survey is designed to capture that diversity. Your
+                    responses will help us build a public dashboard where you can explore and compare feedback across
+                    school districts throughout the state. The goal is to give families, educators, and policymakers a
+                    clearer picture of how communities are thinking about these important issues.</p>
+                <p style="margin-bottom: 0;" data-i18n="intro-p3">The survey takes about 5 minutes. If you have any
+                    questions, reach out to us at <a href="mailto:jodilcarreon@gmail.com"
+                        style="color: #557a3e;">jodilcarreon@gmail.com</a>. Thank you for your time.</p>
             </div>
             <form id="surveyForm">
                 <!-- Section 1: About Your School -->
@@ -458,8 +483,11 @@
 
                     <!-- Q1: School Type -->
                     <div class="question">
-                        <span class="question-label required" data-i18n="q1-label">What kind of school is your child enrolled in?</span>
-                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px; font-style: italic;" data-i18n="q1-hint">For families with children at different schools, please complete one response per school/district.</p>
+                        <span class="question-label required" data-i18n="q1-label">What kind of school is your child
+                            enrolled in?</span>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px; font-style: italic;"
+                            data-i18n="q1-hint">For families with children at different schools, please complete one
+                            response per school/district.</p>
                         <div class="options-list">
                             <div class="option-item">
                                 <input type="radio" name="schoolType" id="public" value="Public school" required>
@@ -480,39 +508,51 @@
                     <div class="question conditional" id="countyQuestion">
                         <span class="question-label required" data-i18n="q2-label">What county is the school in?</span>
                         <div class="search-select-container" id="countyContainer">
-                            <input type="text" class="search-input" id="countySearch" placeholder="Type to search counties..." autocomplete="off" data-i18n-placeholder="county-search-placeholder">
+                            <input type="text" class="search-input" id="countySearch"
+                                placeholder="Type to search counties..." autocomplete="off"
+                                data-i18n-placeholder="county-search-placeholder">
                             <div class="dropdown-list" id="countyDropdown"></div>
                             <input type="hidden" name="county" id="countyValue">
                         </div>
-                        <div class="validation-error" id="countyError" data-i18n="county-error">Please select a county.</div>
+                        <div class="validation-error" id="countyError" data-i18n="county-error">Please select a county.
+                        </div>
                     </div>
 
                     <!-- Q3a: District (public) -->
                     <div class="question conditional" id="districtQuestion">
                         <span class="question-label required" data-i18n="q3a-label">What is your school district?</span>
                         <div class="search-select-container" id="districtContainer">
-                            <input type="text" class="search-input" id="districtSearch" placeholder="Type to search districts..." autocomplete="off" data-i18n-placeholder="district-search-placeholder">
+                            <input type="text" class="search-input" id="districtSearch"
+                                placeholder="Type to search districts..." autocomplete="off"
+                                data-i18n-placeholder="district-search-placeholder">
                             <div class="dropdown-list" id="districtDropdown"></div>
                             <input type="hidden" name="district" id="districtValue">
                         </div>
-                        <div class="validation-error" id="districtError" data-i18n="district-error">Please select a school district.</div>
+                        <div class="validation-error" id="districtError" data-i18n="district-error">Please select a
+                            school district.</div>
                     </div>
 
                     <!-- Q3a Other -->
                     <div class="question conditional" id="districtOtherQuestion">
-                        <span class="question-label" data-i18n="q3a-other-label">Please specify your school district:</span>
-                        <input type="text" name="districtOther" id="districtOther" placeholder="Enter your school district name" data-i18n-placeholder="district-other-placeholder">
+                        <span class="question-label" data-i18n="q3a-other-label">Please specify your school
+                            district:</span>
+                        <input type="text" name="districtOther" id="districtOther"
+                            placeholder="Enter your school district name"
+                            data-i18n-placeholder="district-other-placeholder">
                     </div>
 
                     <!-- Q3b: School Name (private) -->
                     <div class="question conditional" id="schoolNameQuestion">
-                        <span class="question-label required" data-i18n="q3b-label">What is the name of your school?</span>
-                        <input type="text" name="schoolName" id="schoolName" placeholder="Enter your school name" data-i18n-placeholder="school-name-placeholder">
+                        <span class="question-label required" data-i18n="q3b-label">What is the name of your
+                            school?</span>
+                        <input type="text" name="schoolName" id="schoolName" placeholder="Enter your school name"
+                            data-i18n-placeholder="school-name-placeholder">
                     </div>
 
                     <!-- Q4: Grade Levels -->
                     <div class="question">
-                        <span class="question-label required" data-i18n="q4-label">What grade level(s) are your children currently in? (Check all that apply)</span>
+                        <span class="question-label required" data-i18n="q4-label">What grade level(s) are your children
+                            currently in? (Check all that apply)</span>
                         <div class="options-list grade-grid">
                             <div class="option-item">
                                 <input type="checkbox" name="grades" id="grade-prek" value="Pre-K" data-band="K-2">
@@ -575,16 +615,24 @@
 
                     <!-- Q5: 1:1 Devices -->
                     <div class="question">
-                        <span class="question-label required" data-i18n="q5-label">Does your school use a 1:1 device model?</span>
-                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px; font-style: italic;" data-i18n="q5-hint">1:1 means each student has their own dedicated device (e.g., a Chromebook or iPad) rather than sharing with other students. This includes both school-issued devices and bring-your-own-device (BYOD) policies.</p>
+                        <span class="question-label required" data-i18n="q5-label">Does your school use a 1:1 device
+                            model?</span>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px; font-style: italic;"
+                            data-i18n="q5-hint">1:1 means each student has their own dedicated device (e.g., a
+                            Chromebook or iPad) rather than sharing with other students. This includes both
+                            school-issued devices and bring-your-own-device (BYOD) policies.</p>
                         <div class="options-list">
                             <div class="option-item">
-                                <input type="radio" name="hasDevices" id="devices-yes" value="Yes — the school provides a device to each student" required>
-                                <label for="devices-yes" data-i18n="q5-opt-1">Yes — the school provides a device to each student</label>
+                                <input type="radio" name="hasDevices" id="devices-yes"
+                                    value="Yes — the school provides a device to each student" required>
+                                <label for="devices-yes" data-i18n="q5-opt-1">Yes — the school provides a device to each
+                                    student</label>
                             </div>
                             <div class="option-item">
-                                <input type="radio" name="hasDevices" id="devices-byod" value="Yes — students are required to bring their own device (BYOD)">
-                                <label for="devices-byod" data-i18n="q5-opt-2">Yes — students are required to bring their own device (BYOD)</label>
+                                <input type="radio" name="hasDevices" id="devices-byod"
+                                    value="Yes — students are required to bring their own device (BYOD)">
+                                <label for="devices-byod" data-i18n="q5-opt-2">Yes — students are required to bring
+                                    their own device (BYOD)</label>
                             </div>
                             <div class="option-item">
                                 <input type="radio" name="hasDevices" id="devices-no" value="No — devices are shared">
@@ -602,7 +650,8 @@
                         <span class="question-label" data-i18n="q5b-label">Where are shared devices stored?</span>
                         <div class="options-list">
                             <div class="option-item">
-                                <input type="radio" name="deviceStorage" id="storage-cart" value="Computer charging cart">
+                                <input type="radio" name="deviceStorage" id="storage-cart"
+                                    value="Computer charging cart">
                                 <label for="storage-cart" data-i18n="storage-cart">Computer charging cart</label>
                             </div>
                             <div class="option-item">
@@ -619,12 +668,15 @@
                     <!-- Q5c: Device Storage Other (conditional) -->
                     <div class="question conditional" id="deviceStorageOtherQuestion">
                         <span class="question-label" data-i18n="specify-label">Please specify:</span>
-                        <input type="text" name="deviceStorageOther" id="deviceStorageOther" placeholder="Describe where devices are stored..." data-i18n-placeholder="storage-other-placeholder">
+                        <input type="text" name="deviceStorageOther" id="deviceStorageOther"
+                            placeholder="Describe where devices are stored..."
+                            data-i18n-placeholder="storage-other-placeholder">
                     </div>
 
                     <!-- Q5d: Device Type (conditional - shown for both 1:1 and shared) -->
                     <div class="question conditional" id="deviceTypeQuestion">
-                        <span class="question-label required" data-i18n="q5d-label">What type of devices? (Check all that apply)</span>
+                        <span class="question-label required" data-i18n="q5d-label">What type of devices? (Check all
+                            that apply)</span>
                         <div class="options-list">
                             <div class="option-item">
                                 <input type="checkbox" name="deviceTypes" id="device-chromebook" value="Chromebooks">
@@ -644,20 +696,24 @@
                     <!-- Q5c: Device Other (conditional) -->
                     <div class="question conditional" id="deviceOtherQuestion">
                         <span class="question-label" data-i18n="specify-label">Please specify:</span>
-                        <input type="text" name="deviceOther" id="deviceOther" placeholder="Describe the devices..." data-i18n-placeholder="device-other-placeholder">
+                        <input type="text" name="deviceOther" id="deviceOther" placeholder="Describe the devices..."
+                            data-i18n-placeholder="device-other-placeholder">
                     </div>
 
                     <!-- Q5d: Devices Home (conditional) -->
                     <div class="question conditional" id="devicesHomeQuestion">
-                        <span class="question-label required" data-i18n="q5e-label">Are students required or allowed to bring devices home overnight?</span>
+                        <span class="question-label required" data-i18n="q5e-label">Are students required or allowed to
+                            bring devices home overnight?</span>
                         <div class="options-list">
                             <div class="option-item">
                                 <input type="radio" name="devicesHome" id="home-yes-all" value="Yes, all grades">
                                 <label for="home-yes-all" data-i18n="home-yes-all">Yes, all grades</label>
                             </div>
                             <div class="option-item">
-                                <input type="radio" name="devicesHome" id="home-yes-grade" value="Yes, starting in a certain grade">
-                                <label for="home-yes-grade" data-i18n="home-yes-grade">Yes, starting in a certain grade</label>
+                                <input type="radio" name="devicesHome" id="home-yes-grade"
+                                    value="Yes, starting in a certain grade">
+                                <label for="home-yes-grade" data-i18n="home-yes-grade">Yes, starting in a certain
+                                    grade</label>
                             </div>
                             <div class="option-item">
                                 <input type="radio" name="devicesHome" id="home-no" value="No, devices stay at school">
@@ -672,8 +728,10 @@
 
                     <!-- Q5e: Starting Grade (conditional) -->
                     <div class="question conditional" id="startingGradeQuestion">
-                        <span class="question-label" data-i18n="q5f-label">What grade do students start bringing devices home?</span>
-                        <select name="devicesHomeGrade" id="devicesHomeGrade" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                        <span class="question-label" data-i18n="q5f-label">What grade do students start bringing devices
+                            home?</span>
+                        <select name="devicesHomeGrade" id="devicesHomeGrade"
+                            style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
                             <option value="">Select a grade...</option>
                             <option value="Kindergarten">Kindergarten</option>
                             <option value="1st grade">1st grade</option>
@@ -697,21 +755,30 @@
                     <h2 class="section-title" data-i18n="s2-title">Section 2: Current Experience</h2>
 
                     <!-- Grade band intro (shown when multiple bands) -->
-                    <p id="gradeBandIntro" style="display: none; margin-bottom: 20px; font-size: 0.95rem; color: #555; font-style: italic;" data-i18n="grade-band-intro">
-                        Since your children span multiple grade levels, we'd like to know how you feel about screen time for each age group.
+                    <p id="gradeBandIntro"
+                        style="display: none; margin-bottom: 20px; font-size: 0.95rem; color: #555; font-style: italic;"
+                        data-i18n="grade-band-intro">
+                        Since your children span multiple grade levels, we'd like to know how you feel about screen time
+                        for each age group.
                     </p>
 
                     <!-- Grade band repeated questions - dynamically shown -->
                     <div class="grade-band-section" id="band-K-2" data-band="K-2">
                         <h3 data-i18n="band-k2-header">Thinking about your child(ren) in grades K–2:</h3>
                         <div class="question">
-                            <span class="question-label required" data-i18n="q6-label">How do you feel about the amount of screen time in school?</span>
+                            <span class="question-label required" data-i18n="q6-label">How do you feel about the amount
+                                of screen time in school?</span>
                             <div class="options-list">
-                                <div class="option-item"><input type="radio" name="deviceTime_K-2" value="Too much"><label data-i18n="too-much">Too much</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_K-2" value="Just right"><label data-i18n="just-right">Just right</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_K-2" value="Not enough"><label data-i18n="not-enough">Not enough</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_K-2" value="No opinion"><label data-i18n="no-opinion">No opinion</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_K-2" value="I don't know"><label data-i18n="dont-know">I don't know</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_K-2"
+                                        value="Too much"><label data-i18n="too-much">Too much</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_K-2"
+                                        value="Just right"><label data-i18n="just-right">Just right</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_K-2"
+                                        value="Not enough"><label data-i18n="not-enough">Not enough</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_K-2"
+                                        value="No opinion"><label data-i18n="no-opinion">No opinion</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_K-2"
+                                        value="I don't know"><label data-i18n="dont-know">I don't know</label></div>
                             </div>
                         </div>
                     </div>
@@ -719,13 +786,19 @@
                     <div class="grade-band-section" id="band-3-5" data-band="3-5">
                         <h3 data-i18n="band-35-header">Thinking about your child(ren) in grades 3–5:</h3>
                         <div class="question">
-                            <span class="question-label required" data-i18n="q6-label">How do you feel about the amount of screen time in school?</span>
+                            <span class="question-label required" data-i18n="q6-label">How do you feel about the amount
+                                of screen time in school?</span>
                             <div class="options-list">
-                                <div class="option-item"><input type="radio" name="deviceTime_3-5" value="Too much"><label data-i18n="too-much">Too much</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_3-5" value="Just right"><label data-i18n="just-right">Just right</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_3-5" value="Not enough"><label data-i18n="not-enough">Not enough</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_3-5" value="No opinion"><label data-i18n="no-opinion">No opinion</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_3-5" value="I don't know"><label data-i18n="dont-know">I don't know</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_3-5"
+                                        value="Too much"><label data-i18n="too-much">Too much</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_3-5"
+                                        value="Just right"><label data-i18n="just-right">Just right</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_3-5"
+                                        value="Not enough"><label data-i18n="not-enough">Not enough</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_3-5"
+                                        value="No opinion"><label data-i18n="no-opinion">No opinion</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_3-5"
+                                        value="I don't know"><label data-i18n="dont-know">I don't know</label></div>
                             </div>
                         </div>
                     </div>
@@ -733,13 +806,19 @@
                     <div class="grade-band-section" id="band-6-8" data-band="6-8">
                         <h3 data-i18n="band-68-header">Thinking about your child(ren) in grades 6–8:</h3>
                         <div class="question">
-                            <span class="question-label required" data-i18n="q6-label">How do you feel about the amount of screen time in school?</span>
+                            <span class="question-label required" data-i18n="q6-label">How do you feel about the amount
+                                of screen time in school?</span>
                             <div class="options-list">
-                                <div class="option-item"><input type="radio" name="deviceTime_6-8" value="Too much"><label data-i18n="too-much">Too much</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_6-8" value="Just right"><label data-i18n="just-right">Just right</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_6-8" value="Not enough"><label data-i18n="not-enough">Not enough</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_6-8" value="No opinion"><label data-i18n="no-opinion">No opinion</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_6-8" value="I don't know"><label data-i18n="dont-know">I don't know</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_6-8"
+                                        value="Too much"><label data-i18n="too-much">Too much</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_6-8"
+                                        value="Just right"><label data-i18n="just-right">Just right</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_6-8"
+                                        value="Not enough"><label data-i18n="not-enough">Not enough</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_6-8"
+                                        value="No opinion"><label data-i18n="no-opinion">No opinion</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_6-8"
+                                        value="I don't know"><label data-i18n="dont-know">I don't know</label></div>
                             </div>
                         </div>
                     </div>
@@ -747,20 +826,27 @@
                     <div class="grade-band-section" id="band-9-12" data-band="9-12">
                         <h3 data-i18n="band-912-header">Thinking about your child(ren) in grades 9–12:</h3>
                         <div class="question">
-                            <span class="question-label required" data-i18n="q6-label">How do you feel about the amount of screen time in school?</span>
+                            <span class="question-label required" data-i18n="q6-label">How do you feel about the amount
+                                of screen time in school?</span>
                             <div class="options-list">
-                                <div class="option-item"><input type="radio" name="deviceTime_9-12" value="Too much"><label data-i18n="too-much">Too much</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_9-12" value="Just right"><label data-i18n="just-right">Just right</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_9-12" value="Not enough"><label data-i18n="not-enough">Not enough</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_9-12" value="No opinion"><label data-i18n="no-opinion">No opinion</label></div>
-                                <div class="option-item"><input type="radio" name="deviceTime_9-12" value="I don't know"><label data-i18n="dont-know">I don't know</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_9-12"
+                                        value="Too much"><label data-i18n="too-much">Too much</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_9-12"
+                                        value="Just right"><label data-i18n="just-right">Just right</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_9-12"
+                                        value="Not enough"><label data-i18n="not-enough">Not enough</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_9-12"
+                                        value="No opinion"><label data-i18n="no-opinion">No opinion</label></div>
+                                <div class="option-item"><input type="radio" name="deviceTime_9-12"
+                                        value="I don't know"><label data-i18n="dont-know">I don't know</label></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Communication (shared across all grades) -->
                     <div class="question">
-                        <span class="question-label required" data-i18n="q7-label">How well does your school communicate its technology and screen time policies to families?</span>
+                        <span class="question-label required" data-i18n="q7-label">How well does your school communicate
+                            its technology and screen time policies to families?</span>
                         <div class="options-list">
                             <div class="option-item">
                                 <input type="radio" name="communication" id="comm-1" value="Very poorly" required>
@@ -787,8 +873,12 @@
 
                     <!-- Working Well -->
                     <div class="question">
-                        <span class="question-label" data-i18n="q8-label">If the current technology policies or screen time levels at your child's school are working well for your family, please share what aspects you appreciate and why they are successful. <span class="optional-tag">(Optional)</span></span>
-                        <textarea name="workingWell" id="workingWell" placeholder="Share your thoughts..." data-i18n-placeholder="share-thoughts-placeholder"></textarea>
+                        <span class="question-label" data-i18n="q8-label">If the current technology policies or screen
+                            time levels at your child's school are working well for your family, please share what
+                            aspects you appreciate and why they are successful. <span
+                                class="optional-tag">(Optional)</span></span>
+                        <textarea name="workingWell" id="workingWell" placeholder="Share your thoughts..."
+                            data-i18n-placeholder="share-thoughts-placeholder"></textarea>
                     </div>
                 </div>
 
@@ -798,7 +888,8 @@
 
                     <!-- Q9: Concern Gate -->
                     <div class="question">
-                        <span class="question-label required" data-i18n="q9-label">Do you have any concerns about <strong>how</strong> school-issued devices and technology are being used?</span>
+                        <span class="question-label required" data-i18n="q9-label">Do you have any concerns about
+                            <strong>how</strong> school-issued devices and technology are being used?</span>
                         <div class="options-list">
                             <div class="option-item">
                                 <input type="radio" name="hasConcerns" id="concerns-yes" value="Yes" required>
@@ -813,39 +904,55 @@
 
                     <!-- Q9b: Concern Checklist (conditional on Yes) -->
                     <div class="question conditional" id="concernListQuestion">
-                        <span class="question-label" data-i18n="q9b-label">Which of the following concern you? (Check all that apply)</span>
+                        <span class="question-label" data-i18n="q9b-label">Which of the following concern you? (Check
+                            all that apply)</span>
                         <div class="concern-checklist">
                             <div class="option-item">
-                                <input type="checkbox" name="concerns" id="concern-attention" value="Impact on attention span and focus">
-                                <label for="concern-attention" data-i18n="concern-attention">Impact on attention span and focus</label>
+                                <input type="checkbox" name="concerns" id="concern-attention"
+                                    value="Impact on attention span and focus">
+                                <label for="concern-attention" data-i18n="concern-attention">Impact on attention span
+                                    and focus</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="concerns" id="concern-social" value="Impact on social skills and peer interaction">
-                                <label for="concern-social" data-i18n="concern-social">Impact on social skills and peer interaction</label>
+                                <input type="checkbox" name="concerns" id="concern-social"
+                                    value="Impact on social skills and peer interaction">
+                                <label for="concern-social" data-i18n="concern-social">Impact on social skills and peer
+                                    interaction</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="concerns" id="concern-health" value="Eye strain or physical health effects">
-                                <label for="concern-health" data-i18n="concern-health">Eye strain or physical health effects</label>
+                                <input type="checkbox" name="concerns" id="concern-health"
+                                    value="Eye strain or physical health effects">
+                                <label for="concern-health" data-i18n="concern-health">Eye strain or physical health
+                                    effects</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="concerns" id="concern-content" value="Exposure to inappropriate content despite school filters">
-                                <label for="concern-content" data-i18n="concern-content">Exposure to inappropriate content despite school filters</label>
+                                <input type="checkbox" name="concerns" id="concern-content"
+                                    value="Exposure to inappropriate content despite school filters">
+                                <label for="concern-content" data-i18n="concern-content">Exposure to inappropriate
+                                    content despite school filters</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="concerns" id="concern-privacy" value="Data privacy and security">
+                                <input type="checkbox" name="concerns" id="concern-privacy"
+                                    value="Data privacy and security">
                                 <label for="concern-privacy">Data privacy and security</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="concerns" id="concern-replacing" value="Screens replacing hands-on learning, paper-and-pencil work, and handwriting">
-                                <label for="concern-replacing">Screens replacing hands-on learning, paper-and-pencil work, and handwriting</label>
+                                <input type="checkbox" name="concerns" id="concern-replacing"
+                                    value="Screens replacing hands-on learning, paper-and-pencil work, and handwriting">
+                                <label for="concern-replacing">Screens replacing hands-on learning, paper-and-pencil
+                                    work, and handwriting</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="concerns" id="concern-nonacademic" value="Non-academic device use during class, including as rewards or 'brain breaks'">
-                                <label for="concern-nonacademic">Non-academic device use during class, including as rewards or "brain breaks"</label>
+                                <input type="checkbox" name="concerns" id="concern-nonacademic"
+                                    value="Non-academic device use during class, including as rewards or 'brain breaks'">
+                                <label for="concern-nonacademic">Non-academic device use during class, including as
+                                    rewards or "brain breaks"</label>
                             </div>
                             <div class="option-item">
-                                <input type="checkbox" name="concerns" id="concern-homescreen" value="School devices undermining family screen time rules at home">
-                                <label for="concern-homescreen">School devices undermining family screen time rules at home</label>
+                                <input type="checkbox" name="concerns" id="concern-homescreen"
+                                    value="School devices undermining family screen time rules at home">
+                                <label for="concern-homescreen">School devices undermining family screen time rules at
+                                    home</label>
                             </div>
                             <div class="option-item">
                                 <input type="checkbox" name="concerns" id="concern-other" value="Other">
@@ -862,8 +969,10 @@
 
                     <!-- Q10: Free text -->
                     <div class="question conditional" id="concernDetailQuestion">
-                        <span class="question-label">Is there anything else you'd like to share about your concerns? <span class="optional-tag">(Optional)</span></span>
-                        <textarea name="concernDetails" id="concernDetails" placeholder="Share any additional thoughts..."></textarea>
+                        <span class="question-label">Is there anything else you'd like to share about your concerns?
+                            <span class="optional-tag">(Optional)</span></span>
+                        <textarea name="concernDetails" id="concernDetails"
+                            placeholder="Share any additional thoughts..."></textarea>
                     </div>
                 </div>
 
@@ -873,43 +982,81 @@
 
                     <!-- Q11: Policy Requests -->
                     <div class="question">
-                        <span class="question-label required" data-i18n="q11-label">Which of the following requests would you support? (Check all that apply)</span>
+                        <span class="question-label required" data-i18n="q11-label">Which of the following requests
+                            would you support? (Check all that apply)</span>
                         <div class="options-list">
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-1" value="Reconsider the 1:1 device model and return to shared devices in K-8">
-                                <label for="policy-1" data-i18n="policy-1"><strong>Reconsider the 1:1 device model and return to shared devices in K-8</strong><span class="option-description">Replace 1:1 devices with shared options (e.g., computer carts or labs) through elementary and middle school</span></label>
+                                <input type="checkbox" name="policies" id="policy-1"
+                                    value="Reconsider the 1:1 device model and return to shared devices in K-8">
+                                <label for="policy-1" data-i18n="policy-1"><strong>Reconsider the 1:1 device model and
+                                        return to shared devices in K-8</strong><span class="option-description">Replace
+                                        1:1 devices with shared options (e.g., computer carts or labs) through
+                                        elementary and middle school</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-1b" value="Keep school devices at school in elementary, limit take-home in middle school">
-                                <label for="policy-1b" data-i18n="policy-1b"><strong>Keep school devices at school in elementary, limit take-home in middle school</strong><span class="option-description">Devices always stay at school in elementary; sent home only when needed for specific assignments in middle school</span></label>
+                                <input type="checkbox" name="policies" id="policy-1b"
+                                    value="Keep school devices at school in elementary, limit take-home in middle school">
+                                <label for="policy-1b" data-i18n="policy-1b"><strong>Keep school devices at school in
+                                        elementary, limit take-home in middle school</strong><span
+                                        class="option-description">Devices always stay at school in elementary; sent
+                                        home only when needed for specific assignments in middle school</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-2" value="Paper-and-pencil homework only for elementary school">
-                                <label for="policy-2" data-i18n="policy-2"><strong>Paper-and-pencil homework only for elementary school</strong><span class="option-description">School-issued devices remain at school; homework does not require screens</span></label>
+                                <input type="checkbox" name="policies" id="policy-2"
+                                    value="Paper-and-pencil homework only for elementary school">
+                                <label for="policy-2" data-i18n="policy-2"><strong>Paper-and-pencil homework only for
+                                        elementary school</strong><span class="option-description">School-issued devices
+                                        remain at school; homework does not require screens</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-3" value="Prohibit recreational screen use during the school day">
-                                <label for="policy-3" data-i18n="policy-3"><strong>Prohibit recreational screen use during the school day</strong><span class="option-description">No Chromebook/iPad use before school, during lunch, recess, or downtime</span></label>
+                                <input type="checkbox" name="policies" id="policy-3"
+                                    value="Prohibit recreational screen use during the school day">
+                                <label for="policy-3" data-i18n="policy-3"><strong>Prohibit recreational screen use
+                                        during the school day</strong><span class="option-description">No
+                                        Chromebook/iPad use before school, during lunch, recess, or
+                                        downtime</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-4" value="Require explicit opt-in for generative AI tools">
-                                <label for="policy-4" data-i18n="policy-4"><strong>Require explicit opt-in for generative AI tools</strong><span class="option-description">Parental consent required before students use AI tools, with clear disclosure of purpose and data use</span></label>
+                                <input type="checkbox" name="policies" id="policy-4"
+                                    value="Require explicit opt-in for generative AI tools">
+                                <label for="policy-4" data-i18n="policy-4"><strong>Require explicit opt-in for
+                                        generative AI tools</strong><span class="option-description">Parental consent
+                                        required before students use AI tools, with clear disclosure of purpose and data
+                                        use</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-5" value="Guarantee right to opt out of unproven EdTech and AI">
-                                <label for="policy-5" data-i18n="policy-5"><strong>Guarantee right to opt out of unproven EdTech and AI</strong><span class="option-description">A clear, penalty-free pathway for families to opt out of educational technology and AI tools that have not been proven safe or effective for student learning</span></label>
+                                <input type="checkbox" name="policies" id="policy-5"
+                                    value="Guarantee right to opt out of unproven EdTech and AI">
+                                <label for="policy-5" data-i18n="policy-5"><strong>Guarantee right to opt out of
+                                        unproven EdTech and AI</strong><span class="option-description">A clear,
+                                        penalty-free pathway for families to opt out of educational technology and AI
+                                        tools that have not been proven safe or effective for student
+                                        learning</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-6" value="Parental consent for each data-collecting app or website">
-                                <label for="policy-6" data-i18n="policy-6"><strong>Parental consent for each data-collecting app or website</strong><span class="option-description">Individual consent required for each app/site that collects student data</span></label>
+                                <input type="checkbox" name="policies" id="policy-6"
+                                    value="Parental consent for each data-collecting app or website">
+                                <label for="policy-6" data-i18n="policy-6"><strong>Parental consent for each
+                                        data-collecting app or website</strong><span
+                                        class="option-description">Individual consent required for each app/site that
+                                        collects student data</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-7" value="Parental access to student device activity">
-                                <label for="policy-7" data-i18n="policy-7"><strong>Parental access to student device activity</strong><span class="option-description">Access to information about daily screen time and which apps/websites were accessed on school-issued devices</span></label>
+                                <input type="checkbox" name="policies" id="policy-7"
+                                    value="Parental access to student device activity">
+                                <label for="policy-7" data-i18n="policy-7"><strong>Parental access to student device
+                                        activity</strong><span class="option-description">Access to information about
+                                        daily screen time and which apps/websites were accessed on school-issued
+                                        devices</span></label>
                             </div>
                             <div class="option-item policy-option">
-                                <input type="checkbox" name="policies" id="policy-9" value="Invest in teacher training and resources for non-digital instruction">
-                                <label for="policy-9" data-i18n="policy-9"><strong>Invest in teacher training and resources for non-digital instruction</strong><span class="option-description">Ensure teachers are trained and supported to offer paper-based, hands-on, and collaborative alternatives to screen-based assignments</span></label>
+                                <input type="checkbox" name="policies" id="policy-9"
+                                    value="Invest in teacher training and resources for non-digital instruction">
+                                <label for="policy-9" data-i18n="policy-9"><strong>Invest in teacher training and
+                                        resources for non-digital instruction</strong><span
+                                        class="option-description">Ensure teachers are trained and supported to offer
+                                        paper-based, hands-on, and collaborative alternatives to screen-based
+                                        assignments</span></label>
                             </div>
                             <div class="option-item policy-option">
                                 <input type="checkbox" name="policies" id="policy-other" value="Other">
@@ -921,7 +1068,8 @@
                     <!-- Policy Other Text -->
                     <div class="question conditional" id="policyOtherQuestion">
                         <span class="question-label" data-i18n="specify-label">Please specify:</span>
-                        <input type="text" name="policyOther" id="policyOther" placeholder="Describe your suggestion..." data-i18n-placeholder="policy-other-placeholder">
+                        <input type="text" name="policyOther" id="policyOther" placeholder="Describe your suggestion..."
+                            data-i18n-placeholder="policy-other-placeholder">
                     </div>
                 </div>
 
@@ -931,7 +1079,8 @@
 
                     <!-- Q12: Experienced Harm -->
                     <div class="question">
-                        <span class="question-label" data-i18n="q12-label">Has your child or family experienced any specific harm or negative impact related to school technology or screen time?</span>
+                        <span class="question-label" data-i18n="q12-label">Has your child or family experienced any
+                            specific harm or negative impact related to school technology or screen time?</span>
                         <div class="options-list">
                             <div class="option-item">
                                 <input type="radio" name="experiencedHarm" id="harm-yes" value="Yes">
@@ -950,21 +1099,30 @@
 
                     <!-- Q13: Share Experience -->
                     <div class="question conditional" id="harmStoryQuestion">
-                        <span class="question-label" data-i18n="q13-label">Please share your experience. <span class="optional-tag">Your response will remain confidential unless you give permission below.</span></span>
-                        <textarea name="harmStory" id="harmStory" placeholder="Share your experience..." data-i18n-placeholder="share-experience-placeholder"></textarea>
+                        <span class="question-label" data-i18n="q13-label">Please share your experience. <span
+                                class="optional-tag">Your response will remain confidential unless you give permission
+                                below.</span></span>
+                        <textarea name="harmStory" id="harmStory" placeholder="Share your experience..."
+                            data-i18n-placeholder="share-experience-placeholder"></textarea>
                     </div>
 
                     <!-- Q14: Consent to Share -->
                     <div class="question conditional" id="consentQuestion">
-                        <span class="question-label" data-i18n="q14-label">May we anonymously share your story with the EdTech Law Center to support advocacy efforts? No identifying details will be included.</span>
+                        <span class="question-label" data-i18n="q14-label">May we anonymously share your story with the
+                            EdTech Law Center to support advocacy efforts? No identifying details will be
+                            included.</span>
                         <div class="options-list">
                             <div class="option-item">
-                                <input type="radio" name="shareConsent" id="consent-yes" value="Yes - I consent to having my story shared anonymously">
-                                <label for="consent-yes" data-i18n="consent-yes">Yes – I consent to having my story shared anonymously</label>
+                                <input type="radio" name="shareConsent" id="consent-yes"
+                                    value="Yes - I consent to having my story shared anonymously">
+                                <label for="consent-yes" data-i18n="consent-yes">Yes – I consent to having my story
+                                    shared anonymously</label>
                             </div>
                             <div class="option-item">
-                                <input type="radio" name="shareConsent" id="consent-no" value="No - please keep my response private">
-                                <label for="consent-no" data-i18n="consent-no">No – please keep my response private</label>
+                                <input type="radio" name="shareConsent" id="consent-no"
+                                    value="No - please keep my response private">
+                                <label for="consent-no" data-i18n="consent-no">No – please keep my response
+                                    private</label>
                             </div>
                         </div>
                     </div>
@@ -972,11 +1130,13 @@
 
                 <!-- Section 6: Educator/Healthcare Provider Follow-up -->
                 <div class="section" data-section="6">
-                    <h2 class="section-title" data-i18n="s6-title">Section 6: For Educators &amp; Healthcare Providers</h2>
+                    <h2 class="section-title" data-i18n="s6-title">Section 6: For Educators &amp; Healthcare Providers
+                    </h2>
 
                     <!-- Educator/Healthcare Question -->
                     <div class="question">
-                        <span class="question-label" data-i18n="q15-label">Are you a K-12 educator or healthcare provider?</span>
+                        <span class="question-label" data-i18n="q15-label">Are you a K-12 educator or healthcare
+                            provider?</span>
                         <div class="options-list">
                             <div class="option-item">
                                 <input type="radio" name="profession" id="prof-educator" value="K-12 Educator">
@@ -999,7 +1159,8 @@
 
                     <!-- Focus Group Interest (conditional) -->
                     <div class="question conditional" id="focusGroupQuestion">
-                        <span class="question-label" data-i18n="q16-label">Would you be interested in participating in a focus group to share your perspective on school technology practices?</span>
+                        <span class="question-label" data-i18n="q16-label">Would you be interested in participating in a
+                            focus group to share your perspective on school technology practices?</span>
                         <div class="options-list">
                             <div class="option-item">
                                 <input type="radio" name="focusGroupInterest" id="focus-yes" value="Yes">
@@ -1007,7 +1168,8 @@
                             </div>
                             <div class="option-item">
                                 <input type="radio" name="focusGroupInterest" id="focus-maybe" value="Maybe">
-                                <label for="focus-maybe" data-i18n="focus-maybe">Maybe — please send me more information</label>
+                                <label for="focus-maybe" data-i18n="focus-maybe">Maybe — please send me more
+                                    information</label>
                             </div>
                             <div class="option-item">
                                 <input type="radio" name="focusGroupInterest" id="focus-no" value="No">
@@ -1018,8 +1180,10 @@
 
                     <!-- Educator Email (conditional) -->
                     <div class="question conditional" id="educatorEmailQuestion">
-                        <span class="question-label" data-i18n="q17-label">Please provide your email so we can follow up:</span>
-                        <input type="email" name="educatorEmail" id="educatorEmail" placeholder="your.email@example.com">
+                        <span class="question-label" data-i18n="q17-label">Please provide your email so we can follow
+                            up:</span>
+                        <input type="email" name="educatorEmail" id="educatorEmail"
+                            placeholder="your.email@example.com">
                     </div>
                 </div>
 
@@ -1029,16 +1193,30 @@
             <!-- Success Message -->
             <div class="success-message" id="successMessage">
                 <div class="success-icon">
-                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                    </svg>
                 </div>
                 <h2 data-i18n="success-title">Thank You!</h2>
                 <div style="max-width: 520px; margin: 0 auto; text-align: left;">
-                    <p style="margin-top: 16px; text-align: center; color: #000;" data-i18n="success-recorded">Your response has been recorded.</p>
-                    <p style="margin-top: 16px; color: #555; font-size: 0.95rem;" data-i18n="success-mailing">Want to be the first to hear when we publish the survey dashboard? <a href="http://eepurl.com/jop_zc" target="_blank" style="color: #557a3e;">Join our mailing list</a>.</p>
-                    <div style="margin-top: 16px; background: #f0ebe3; border-left: 4px solid #557a3e; border-radius: 6px; padding: 16px 20px;">
-                        <p style="margin: 0; color: #555; font-size: 0.95rem;" data-i18n="success-guide">If you'd like to see changes in how technology is used at your child's school — or want to learn more about what's possible — check out our <a href="https://edtechguide.paunplugged.org" style="color: #557a3e;">EdTech Advocacy Guide</a>.</p>
+                    <p style="margin-top: 16px; text-align: center; color: #000;" data-i18n="success-recorded">Your
+                        response has been recorded.</p>
+                    <p style="margin-top: 16px; color: #555; font-size: 0.95rem;" data-i18n="success-mailing">Want to be
+                        the first to hear when we publish the survey dashboard? <a href="http://eepurl.com/jop_zc"
+                            target="_blank" style="color: #557a3e;">Join our mailing list</a>.</p>
+                    <div
+                        style="margin-top: 16px; background: #f0ebe3; border-left: 4px solid #557a3e; border-radius: 6px; padding: 16px 20px;">
+                        <p style="margin: 0; color: #555; font-size: 0.95rem;" data-i18n="success-guide">If you'd like
+                            to see changes in how technology is used at your child's school — or want to learn more
+                            about what's possible — check out our <a
+                                href="https://www.distractionfreeschoolsca.org/edtech" style="color: #557a3e;">EdTech
+                                Reform Priorities</a>.</p>
                     </div>
-                    <p style="margin-top: 16px; margin-bottom: 0; color: #555; font-size: 0.95rem;" data-i18n="success-footer"><a href="https://paunplugged.org" target="_blank" style="color: #557a3e;">PA Unplugged</a> is a grassroots coalition of parents &amp; caregivers working to shift the culture around technology use in homes, schools, and communities.</p>
+                    <p style="margin-top: 16px; margin-bottom: 0; color: #555; font-size: 0.95rem;"
+                        data-i18n="success-footer"><a href="https://distractionfreeschoolsca.org" target="_blank"
+                            style="color: #557a3e;">Distraction Free Schools CA</a> is a coalition of parents,
+                        caregivers, and educators working to shift the culture around phone and technology use in homes,
+                        schools, and communities.</p>
                 </div>
             </div>
         </div>
@@ -1049,13 +1227,13 @@
 
         const translations = {
             en: {
-                'header-title': 'Screen Time and Technology Use in PA Schools',
+                'header-title': 'Screen Time and Technology Use in CA Schools',
                 'header-subtitle': 'A survey for parents &amp; caregivers',
                 'lang-toggle': 'Ver en Español',
                 'intro-welcome': '<strong>Welcome!</strong>',
-                'intro-p1': 'The team at <a href="https://paunplugged.org" style="color: #557a3e;">PA Unplugged</a> designed this survey to understand how parents and caregivers across Pennsylvania feel about technology and screen time in schools.',
+                'intro-p1': 'The team at <a href="https://distractionfreeschoolsca.org" style="color: #557a3e;">Distraction Free Schools CA</a> designed this survey (with the help of PA Unplugged) to understand how parents and caregivers across California feel about technology and screen time in schools.',
                 'intro-p2': 'Every community is different, and families bring a wide range of experiences and perspectives. This survey is designed to capture that diversity. Your responses will help us build a public dashboard where you can explore and compare feedback across school districts throughout the state. The goal is to give families, educators, and policymakers a clearer picture of how communities are thinking about these important issues.',
-                'intro-p3': 'The survey takes about 5 minutes. If you have any questions, reach out to us at <a href="mailto:hello@paunplugged.org" style="color: #557a3e;">hello@paunplugged.org</a>. Thank you for your time.',
+                'intro-p3': 'The survey takes about 5 minutes. If you have any questions, reach out to us at <a href="mailto:jodilcarreon@gmail.com" style="color: #557a3e;">jodilcarreon@gmail.com</a>. Thank you for your time.',
                 's1-title': 'Section 1: About Your School',
                 'q1-label': 'What kind of school is your child enrolled in?',
                 'q1-hint': 'For families with children at different schools, please complete one response per school/district.',
@@ -1183,8 +1361,8 @@
                 'success-title': 'Thank You!',
                 'success-recorded': 'Your response has been recorded.',
                 'success-mailing': 'Want to be the first to hear when we publish the survey dashboard? <a href="http://eepurl.com/jop_zc" target="_blank" style="color: #557a3e;">Join our mailing list</a>.',
-                'success-guide': "If you'd like to see changes in how technology is used at your child's school \u2014 or want to learn more about what's possible \u2014 check out our <a href=\"https://edtechguide.paunplugged.org\" style=\"color: #557a3e;\">EdTech Advocacy Guide</a>.",
-                'success-footer': '<a href="https://paunplugged.org" target="_blank" style="color: #557a3e;">PA Unplugged</a> is a grassroots coalition of parents &amp; caregivers working to shift the culture around technology use in homes, schools, and communities.',
+                'success-guide': "If you'd like to see changes in how technology is used at your child's school \u2014 or want to learn more about what's possible \u2014 check out our <a href=\"https://edtechguide.distractionfreeschoolsca.org\" style=\"color: #557a3e;\">EdTech Advocacy Guide</a>.",
+                'success-footer': '<a href="https://distractionfreeschoolsca.org" target="_blank" style="color: #557a3e;">Distraction Free Schools CA</a> is a grassroots coalition of parents &amp; caregivers working to shift the culture around technology use in homes, schools, and communities.',
                 'alert-grade': 'Please select at least one grade level.',
                 'alert-duplicate': 'It looks like you already submitted a response. Would you like to submit another one? (e.g., for a different school or district)',
                 'alert-band': 'Please answer the device time question for grades',
@@ -1192,13 +1370,13 @@
                 'progress-label': 'Section {current} of {total}',
             },
             es: {
-                'header-title': 'Tiempo de Pantalla y Uso de Tecnología en las Escuelas de PA',
+                'header-title': 'Tiempo de Pantalla y Uso de Tecnología en las Escuelas de CA',
                 'header-subtitle': 'Una encuesta para padres y cuidadores',
                 'lang-toggle': 'View in English',
                 'intro-welcome': '<strong>¡Bienvenido/a!</strong>',
-                'intro-p1': 'El equipo de <a href="https://paunplugged.org" style="color: #557a3e;">PA Unplugged</a> diseñó esta encuesta para comprender cómo los padres y cuidadores de toda Pensilvania se sienten sobre la tecnología y el tiempo de pantalla en las escuelas.',
+                'intro-p1': 'El equipo de <a href="https://distractionfreeschoolsca.org" style="color: #557a3e;">Distraction Free Schools CA</a> diseñó esta encuesta para comprender cómo los padres y cuidadores de toda California se sienten sobre la tecnología y el tiempo de pantalla en las escuelas.',
                 'intro-p2': 'Cada comunidad es diferente, y las familias aportan una amplia gama de experiencias y perspectivas. Esta encuesta está diseñada para capturar esa diversidad. Sus respuestas nos ayudarán a crear un panel público donde podrá explorar y comparar los comentarios de los distritos escolares de todo el estado. El objetivo es dar a las familias, educadores y legisladores una imagen más clara de cómo las comunidades están pensando sobre estos temas importantes.',
-                'intro-p3': 'La encuesta toma aproximadamente 5 minutos. Si tiene alguna pregunta, contáctenos en <a href="mailto:hello@paunplugged.org" style="color: #557a3e;">hello@paunplugged.org</a>. Gracias por su tiempo.',
+                'intro-p3': 'La encuesta toma aproximadamente 5 minutos. Si tiene alguna pregunta, contáctenos en <a href="mailto:hello@distractionfreeschoolsca.org" style="color: #557a3e;">hello@distractionfreeschoolsca.org</a>. Gracias por su tiempo.',
                 's1-title': 'Sección 1: Sobre Su Escuela',
                 'q1-label': '¿En qué tipo de escuela está inscrito/a su hijo/a?',
                 'q1-hint': 'Para familias con hijos en diferentes escuelas, complete una respuesta por escuela/distrito.',
@@ -1326,8 +1504,8 @@
                 'success-title': '¡Gracias!',
                 'success-recorded': 'Su respuesta ha sido registrada.',
                 'success-mailing': '¿Quiere ser el/la primero/a en enterarse cuando publiquemos el panel de la encuesta? <a href="http://eepurl.com/jop_zc" target="_blank" style="color: #557a3e;">Únase a nuestra lista de correo</a>.',
-                'success-guide': "Si desea ver cambios en cómo se usa la tecnología en la escuela de su hijo/a — o quiere aprender más sobre lo que es posible — consulte nuestra <a href=\"https://edtechguide.paunplugged.org\" style=\"color: #557a3e;\">Guía de Defensa de EdTech</a>.",
-                'success-footer': '<a href="https://paunplugged.org" target="_blank" style="color: #557a3e;">PA Unplugged</a> es una coalición de base de padres y cuidadores que trabajan para cambiar la cultura en torno al uso de la tecnología en hogares, escuelas y comunidades.',
+                'success-guide': "Si desea ver cambios en cómo se usa la tecnología en la escuela de su hijo/a — o quiere aprender más sobre lo que es posible — consulte nuestra <a href=\"https://edtechguide.distractionfreeschoolsca.org\" style=\"color: #557a3e;\">Guía de Defensa de EdTech</a>.",
+                'success-footer': '<a href="https://distractionfreeschoolsca.org" target="_blank" style="color: #557a3e;">Distraction Free Schools CA</a> es una coalición de base de padres y cuidadores que trabajan para cambiar la cultura en torno al uso de la tecnología en hogares, escuelas y comunidades.',
                 'alert-grade': 'Por favor seleccione al menos un nivel de grado.',
                 'alert-duplicate': 'Parece que ya envió una respuesta. ¿Le gustaría enviar otra? (p. ej., para una escuela o distrito diferente)',
                 'alert-band': 'Por favor responda la pregunta sobre tiempo de pantalla para los grados',
@@ -1375,78 +1553,1256 @@
             }
         }
 
-        // PA School Districts Data
-        const paDistricts = {
-            "Adams": ["Bermudian Springs", "Conewago Valley", "Fairfield Area", "Gettysburg Area", "Littlestown Area", "Upper Adams", "Other - please specify"],
-            "Allegheny": ["Allegheny Valley", "Avonworth", "Baldwin-Whitehall", "Bethel Park", "Brentwood Borough", "Carlynton", "Chartiers Valley", "Clairton City", "Cornell", "Deer Lakes", "Duquesne City", "East Allegheny", "Elizabeth Forward", "Fox Chapel Area", "Gateway", "Hampton Township", "Highlands", "Keystone Oaks", "McKeesport Area", "Montour", "Moon Area", "Mt. Lebanon", "North Allegheny", "North Hills", "Northgate", "Penn Hills", "Pine-Richland", "Pittsburgh", "Plum Borough", "Quaker Valley", "Riverview", "Shaler Area", "South Allegheny", "South Fayette Township", "South Park", "Steel Valley", "Sto-Rox", "Upper St. Clair", "West Allegheny", "West Jefferson Hills", "West Mifflin Area", "Wilkinsburg Borough", "Woodland Hills", "Other - please specify"],
-            "Armstrong": ["Apollo-Ridge", "Armstrong", "Freeport Area", "Leechburg Area", "Other - please specify"],
-            "Beaver": ["Aliquippa", "Ambridge Area", "Beaver Area", "Big Beaver Falls Area", "Blackhawk", "Center Area", "Freedom Area", "Hopewell Area", "Midland Borough", "New Brighton Area", "Riverside Beaver County", "Rochester Area", "South Side Area", "Western Beaver County", "Other - please specify"],
-            "Bedford": ["Bedford Area", "Chestnut Ridge", "Everett Area", "Northern Bedford County", "Tussey Mountain", "Other - please specify"],
-            "Berks": ["Antietam", "Boyertown Area", "Brandywine Heights Area", "Conrad Weiser Area", "Daniel Boone Area", "Exeter Township", "Fleetwood Area", "Governor Mifflin", "Hamburg Area", "Kutztown Area", "Muhlenberg", "Oley Valley", "Reading", "Schuylkill Valley", "Tulpehocken Area", "Twin Valley", "Wilson", "Wyomissing Area", "Other - please specify"],
-            "Blair": ["Altoona Area", "Bellwood-Antis", "Claysburg-Kimmel", "Hollidaysburg Area", "Spring Cove", "Tyrone Area", "Williamsburg Community", "Other - please specify"],
-            "Bradford": ["Athens Area", "Canton Area", "Northeast Bradford", "Sayre Area", "Towanda Area", "Troy Area", "Wyalusing Area", "Other - please specify"],
-            "Bucks": ["Bensalem Township", "Bristol Borough", "Bristol Township", "Centennial", "Central Bucks", "Council Rock", "Morrisville Borough", "Neshaminy", "New Hope-Solebury", "Palisades", "Pennridge", "Pennsbury", "Quakertown Community", "Other - please specify"],
-            "Butler": ["Butler Area", "Karns City Area", "Mars Area", "Moniteau", "Seneca Valley", "Slippery Rock Area", "South Butler County", "Other - please specify"],
-            "Cambria": ["Cambria Heights", "Central Cambria", "Conemaugh Township Area", "Ferndale Area", "Forest Hills", "Greater Johnstown", "Northern Cambria", "Penn Cambria", "Portage Area", "Richland", "Westmont Hilltop", "Other - please specify"],
-            "Cameron": ["Cameron County", "Other - please specify"],
-            "Carbon": ["Jim Thorpe Area", "Lehighton Area", "Palmerton Area", "Panther Valley", "Weatherly Area", "Other - please specify"],
-            "Centre": ["Bald Eagle Area", "Bellefonte Area", "Penns Valley Area", "State College Area", "Other - please specify"],
-            "Chester": ["Avon Grove", "Coatesville Area", "Downingtown Area", "Great Valley", "Kennett Consolidated", "Octorara Area", "Owen J. Roberts", "Oxford Area", "Phoenixville Area", "Tredyffrin-Easttown", "Unionville-Chadds Ford", "West Chester Area", "Other - please specify"],
-            "Clarion": ["Clarion Area", "Clarion-Limestone Area", "Keystone", "North Clarion County", "Redbank Valley", "Union", "Other - please specify"],
-            "Clearfield": ["Clearfield Area", "Curwensville Area", "DuBois Area", "Glendale", "Harmony Area", "Moshannon Valley", "Philipsburg-Osceola Area", "West Branch Area", "Other - please specify"],
-            "Clinton": ["Keystone Central", "Other - please specify"],
-            "Columbia": ["Benton Area", "Berwick Area", "Bloomsburg Area", "Central Columbia", "Millville Area", "Southern Columbia Area", "Other - please specify"],
-            "Crawford": ["Cambridge Springs", "Conneaut", "Crawford Central", "Penncrest", "Union City Area", "Other - please specify"],
-            "Cumberland": ["Big Spring", "Camp Hill", "Carlisle Area", "Cumberland Valley", "East Pennsboro Area", "Mechanicsburg Area", "Shippensburg Area", "South Middleton", "West Shore", "Other - please specify"],
-            "Dauphin": ["Central Dauphin", "Derry Township", "Halifax Area", "Harrisburg City", "Lower Dauphin", "Middletown Area", "Millersburg Area", "Steelton-Highspire", "Susquehanna Township", "Upper Dauphin Area", "Williams Valley", "Other - please specify"],
-            "Delaware": ["Chester-Upland", "Chichester", "Garnet Valley", "Haverford Township", "Interboro", "Marple Newtown", "Penn-Delco", "Radnor Township", "Ridley", "Rose Tree Media", "Southeast Delco", "Springfield", "Upper Darby", "Wallingford-Swarthmore", "William Penn", "Other - please specify"],
-            "Elk": ["Johnsonburg Area", "Ridgway Area", "St. Marys Area", "Other - please specify"],
-            "Erie": ["Corry Area", "Erie City", "Fairview", "Fort LeBoeuf", "General McLane", "Girard", "Harbor Creek", "Iroquois", "Millcreek Township", "North East", "Northwestern", "Union City Area", "Wattsburg Area", "Other - please specify"],
-            "Fayette": ["Albert Gallatin Area", "Brownsville Area", "Connellsville Area", "Frazier", "Laurel Highlands", "Uniontown Area", "Other - please specify"],
-            "Forest": ["Forest Area", "Other - please specify"],
-            "Franklin": ["Chambersburg Area", "Fannett-Metal", "Greencastle-Antrim", "Tuscarora", "Waynesboro Area", "Other - please specify"],
-            "Fulton": ["Central Fulton", "Forbes Road", "Southern Fulton", "Other - please specify"],
-            "Greene": ["Carmichaels Area", "Central Greene", "Jefferson-Morgan", "Southeastern Greene", "West Greene", "Other - please specify"],
-            "Huntingdon": ["Huntingdon Area", "Juniata Valley", "Mount Union Area", "Southern Huntingdon County", "Other - please specify"],
-            "Indiana": ["Blairsville-Saltsburg", "Homer-Center", "Indiana Area", "Marion Center Area", "Penns Manor Area", "Purchase Line", "United", "Other - please specify"],
-            "Jefferson": ["Brockway Area", "Brookville Area", "Punxsutawney Area", "Other - please specify"],
-            "Juniata": ["Juniata County", "Other - please specify"],
-            "Lackawanna": ["Abington Heights", "Carbondale Area", "Dunmore", "Lakeland", "Mid Valley", "North Pocono", "Old Forge", "Riverside", "Scranton", "Valley View", "Other - please specify"],
-            "Lancaster": ["Cocalico", "Columbia Borough", "Conestoga Valley", "Donegal", "Eastern Lancaster County", "Elizabethtown Area", "Ephrata Area", "Hempfield", "Lampeter-Strasburg", "Lancaster", "Manheim Central", "Manheim Township", "Penn Manor", "Pequea Valley", "Solanco", "Warwick", "Other - please specify"],
-            "Lawrence": ["Ellwood City Area", "Laurel", "Mohawk Area", "Neshannock Township", "New Castle Area", "Shenango Area", "Union Area", "Wilmington Area", "Other - please specify"],
-            "Lebanon": ["Annville-Cleona", "Cornwall-Lebanon", "Eastern Lebanon County", "Lebanon", "Northern Lebanon", "Palmyra Area", "Other - please specify"],
-            "Lehigh": ["Allentown City", "Catasauqua Area", "East Penn", "Northern Lehigh", "Northwestern Lehigh", "Parkland", "Salisbury Township", "Southern Lehigh", "Whitehall-Coplay", "Other - please specify"],
-            "Luzerne": ["Crestwood", "Dallas", "Greater Nanticoke Area", "Hanover Area", "Hazleton Area", "Lake-Lehman", "Northwest Area", "Pittston Area", "Wilkes-Barre Area", "Wyoming Area", "Wyoming Valley West", "Other - please specify"],
-            "Lycoming": ["East Lycoming", "Jersey Shore Area", "Loyalsock Township", "Montgomery Area", "Montoursville Area", "Muncy", "South Williamsport Area", "Williamsport Area", "Other - please specify"],
-            "McKean": ["Bradford Area", "Kane Area", "Otto-Eldred", "Port Allegany", "Smethport Area", "Other - please specify"],
-            "Mercer": ["Commodore Perry", "Farrell Area", "Grove City Area", "Greenville Area", "Hermitage", "Jamestown Area", "Lakeview", "Mercer Area", "Reynolds", "Sharon City", "Sharpsville Area", "West Middlesex Area", "Other - please specify"],
-            "Mifflin": ["Mifflin County", "Other - please specify"],
-            "Monroe": ["East Stroudsburg Area", "Pleasant Valley", "Pocono Mountain", "Stroudsburg Area", "Other - please specify"],
-            "Montgomery": ["Abington", "Bryn Athyn", "Cheltenham Township", "Colonial", "Hatboro-Horsham", "Jenkintown", "Lower Merion", "Lower Moreland Township", "Methacton", "Norristown Area", "North Penn", "Perkiomen Valley", "Pottsgrove", "Souderton Area", "Springfield Township", "Spring-Ford Area", "Upper Dublin", "Upper Merion Area", "Upper Moreland Township", "Upper Perkiomen", "Wissahickon", "Other - please specify"],
-            "Montour": ["Danville Area", "Other - please specify"],
-            "Northampton": ["Bangor Area", "Bethlehem Area", "Easton Area", "Nazareth Area", "Northampton Area", "Pen Argyl Area", "Saucon Valley", "Wilson Area", "Other - please specify"],
-            "Northumberland": ["Line Mountain", "Milton Area", "Mount Carmel Area", "Shamokin Area", "Shikellamy", "Warrior Run", "Other - please specify"],
-            "Perry": ["Greenwood", "Newport", "Susquenita", "West Perry", "Other - please specify"],
-            "Philadelphia": ["School District of Philadelphia", "Other - please specify"],
-            "Pike": ["Delaware Valley", "Wallenpaupack Area", "Other - please specify"],
-            "Potter": ["Austin Area", "Coudersport Area", "Galeton Area", "Northern Potter", "Oswayo Valley", "Other - please specify"],
-            "Schuylkill": ["Blue Mountain", "Mahanoy Area", "Minersville Area", "North Schuylkill", "Pine Grove Area", "Pottsville Area", "Saint Clair Area", "Schuylkill Haven Area", "Shenandoah Valley", "Tamaqua Area", "Tri-Valley", "Williams Valley", "Other - please specify"],
-            "Snyder": ["Midd-West", "Selinsgrove Area", "Other - please specify"],
-            "Somerset": ["Berlin Brothersvalley", "Conemaugh Township Area", "Meyersdale Area", "North Star", "Rockwood Area", "Shade-Central City", "Shanksville-Stonycreek", "Somerset Area", "Turkeyfoot Valley Area", "Windber Area", "Other - please specify"],
-            "Sullivan": ["Sullivan County", "Other - please specify"],
-            "Susquehanna": ["Blue Ridge", "Elk Lake", "Forest City Regional", "Montrose Area", "Mountain View", "Susquehanna Community", "Other - please specify"],
-            "Tioga": ["Cowanesque Valley", "Northern Tioga", "Southern Tioga", "Wellsboro Area", "Other - please specify"],
-            "Union": ["Lewisburg Area", "Mifflinburg Area", "Other - please specify"],
-            "Venango": ["Cranberry Area", "Franklin Area", "Oil City Area", "Titusville Area", "Valley Grove", "Other - please specify"],
-            "Warren": ["Warren County", "Other - please specify"],
-            "Washington": ["Avella Area", "Bentworth", "Bethlehem-Center", "Burgettstown Area", "California Area", "Canon-McMillan", "Charleroi", "Chartiers-Houston", "Fort Cherry", "McGuffey", "Peters Township", "Ringgold", "Trinity Area", "Washington", "Other - please specify"],
-            "Wayne": ["Wayne Highlands", "Western Wayne", "Wallenpaupack Area", "Other - please specify"],
-            "Westmoreland": ["Belle Vernon Area", "Burrell", "Derry Area", "Franklin Regional", "Greater Latrobe", "Greensburg Salem", "Hempfield Area", "Jeannette City", "Kiski Area", "Ligonier Valley", "Monessen City", "Mount Pleasant Area", "New Kensington-Arnold", "Norwin", "Penn-Trafford", "Southmoreland", "Yough", "Other - please specify"],
-            "Wyoming": ["Lackawanna Trail", "Tunkhannock Area", "Other - please specify"],
-            "York": ["Central York", "Dallastown Area", "Dover Area", "Eastern York", "Hanover Public", "Northeastern York", "Northern York County", "Red Lion Area", "South Eastern", "South Western", "Southern York County", "Spring Grove Area", "West Shore", "West York Area", "York City", "York Suburban", "Other - please specify"]
+        // CA School Districts Data
+        const caDistricts = {
+            "Alameda": [
+                "Alameda County Office of Education",
+                "Alameda Unified",
+                "Albany City Unified",
+                "Berkeley Unified",
+                "California School for the Blind (State Special Schl)",
+                "California School for the Deaf-Fremont (State Special Schl)",
+                "Castro Valley Unified",
+                "Dublin Unified",
+                "Eden Area ROP",
+                "Emery Unified",
+                "Fremont Unified",
+                "Hayward Unified",
+                "Livermore Valley Joint Unified",
+                "Mission Valley ROC/P",
+                "Mountain House Elementary",
+                "New Haven Unified",
+                "Newark Unified",
+                "Oakland Unified",
+                "Piedmont City Unified",
+                "Pleasanton Unified",
+                "SBE - Latitude 37.8 High",
+                "San Leandro Unified",
+                "San Lorenzo Unified",
+                "Sunol Glen Unified",
+                "Tri-Valley ROP",
+                "Other - please specify"
+            ],
+            "Alpine": [
+                "Alpine County Office of Education",
+                "Alpine County Unified",
+                "Other - please specify"
+            ],
+            "Amador": [
+                "Amador County Office of Education",
+                "Amador County ROP",
+                "Amador County Unified",
+                "Other - please specify"
+            ],
+            "Butte": [
+                "Bangor Union Elementary",
+                "Biggs Unified",
+                "Butte County Office of Education",
+                "Butte County ROP",
+                "Chico Unified",
+                "Durham Unified",
+                "Golden Feather Union Elementary",
+                "Gridley Unified",
+                "Manzanita Elementary",
+                "Oroville City Elementary",
+                "Oroville Union High",
+                "Palermo Union Elementary",
+                "Paradise Unified",
+                "Pioneer Union Elementary",
+                "Thermalito Union Elementary",
+                "Other - please specify"
+            ],
+            "Calaveras": [
+                "Bret Harte Union High",
+                "Calaveras County Office of Education",
+                "Calaveras Unified",
+                "Mark Twain Union Elementary",
+                "Vallecito Union",
+                "Other - please specify"
+            ],
+            "Colusa": [
+                "Colusa County Office of Education",
+                "Colusa Unified",
+                "Maxwell Unified",
+                "Pierce Joint Unified",
+                "Williams Unified",
+                "Other - please specify"
+            ],
+            "Contra Costa": [
+                "Acalanes Union High",
+                "Antioch Unified",
+                "Brentwood Union",
+                "Byron Union Elementary",
+                "Canyon Elementary",
+                "Contra Costa County Office of Education",
+                "Contra Costa County ROP",
+                "John Swett Unified",
+                "Knightsen Elementary",
+                "Lafayette Elementary",
+                "Liberty Union High",
+                "Martinez Unified",
+                "Moraga Elementary",
+                "Mt. Diablo Unified",
+                "Oakley Union Elementary",
+                "Orinda Union",
+                "Pittsburg Unified",
+                "SBE - John Henry High",
+                "San Ramon Valley Unified",
+                "Walnut Creek Elementary",
+                "West Contra Costa Unified",
+                "Other - please specify"
+            ],
+            "Del Norte": [
+                "Del Norte County Office of Education",
+                "Del Norte County ROP",
+                "Del Norte County Unified",
+                "Other - please specify"
+            ],
+            "El Dorado": [
+                "Black Oak Mine Unified",
+                "Buckeye Union Elementary",
+                "Camino Union Elementary",
+                "Central Sierra ROP",
+                "El Dorado County Office of Education",
+                "El Dorado Union High",
+                "Gold Oak Union Elementary",
+                "Gold Trail Union Elementary",
+                "Indian Diggings Elementary",
+                "Lake Tahoe Unified",
+                "Latrobe",
+                "Mother Lode Union Elementary",
+                "Pioneer Union",
+                "Placerville Union Elementary",
+                "Pollock Pines Elementary",
+                "Rescue Union Elementary",
+                "Silver Fork Elementary",
+                "Other - please specify"
+            ],
+            "Fresno": [
+                "Alvina Elementary",
+                "Big Creek Elementary",
+                "Burrel Union Elementary",
+                "Caruthers Unified",
+                "Central Unified",
+                "Clay Joint Elementary",
+                "Clovis Unified",
+                "Coalinga-Huron Unified",
+                "Firebaugh-Las Deltas Unified",
+                "Fowler Unified",
+                "Fresno County Office of Education",
+                "Fresno ROP",
+                "Fresno Unified",
+                "Golden Plains Unified",
+                "Kerman Unified",
+                "Kings Canyon Joint Unified",
+                "Kingsburg Elementary Charter",
+                "Kingsburg Joint Union High",
+                "Laton Joint Unified",
+                "Mendota Unified",
+                "Orange Center",
+                "Pacific Union Elementary",
+                "Parlier Unified",
+                "Pine Ridge Elementary",
+                "Raisin City Elementary",
+                "Riverdale Joint Unified",
+                "Sanger Unified",
+                "Selma Unified",
+                "Sierra Unified",
+                "Valley ROP",
+                "Washington Colony Elementary",
+                "Washington Unified",
+                "West Park Elementary",
+                "Westside Elementary",
+                "Other - please specify"
+            ],
+            "Glenn": [
+                "Capay Joint Union Elementary",
+                "Glenn County Office of Education",
+                "Glenn County ROP",
+                "Hamilton Unified",
+                "Lake Elementary",
+                "Orland Joint Unified",
+                "Plaza Elementary",
+                "Princeton Joint Unified",
+                "Stony Creek Joint Unified",
+                "Willows Unified",
+                "Other - please specify"
+            ],
+            "Humboldt": [
+                "Arcata Elementary",
+                "Big Lagoon Union Elementary",
+                "Blue Lake Union Elementary",
+                "Bridgeville Elementary",
+                "Cuddeback Union Elementary",
+                "Cutten Elementary",
+                "Eureka City Schools",
+                "Ferndale Unified",
+                "Fieldbrook Elementary",
+                "Fortuna Elementary",
+                "Fortuna Union High",
+                "Freshwater Elementary",
+                "Garfield Elementary",
+                "Humboldt County Office of Education",
+                "Humboldt County ROP",
+                "Hydesville Elementary",
+                "Jacoby Creek Elementary",
+                "Klamath-Trinity Joint Unified",
+                "Kneeland Elementary",
+                "Loleta Union Elementary",
+                "Maple Creek Elementary",
+                "Mattole Unified",
+                "McKinleyville Union Elementary",
+                "Northern Humboldt Union High",
+                "Orick Elementary",
+                "Pacific Union Elementary",
+                "Peninsula Union",
+                "Rio Dell Elementary",
+                "Scotia Union Elementary",
+                "South Bay Union Elementary",
+                "Southern Humboldt Joint Unified",
+                "Trinidad Union Elementary",
+                "Other - please specify"
+            ],
+            "Imperial": [
+                "Brawley Elementary",
+                "Brawley Union High",
+                "Calexico Unified",
+                "Calipatria Unified",
+                "Central Union High",
+                "El Centro Elementary",
+                "Heber Elementary",
+                "Holtville Unified",
+                "Imperial County Office of Education",
+                "Imperial Unified",
+                "Imperial Valley ROP",
+                "Magnolia Union Elementary",
+                "McCabe Union Elementary",
+                "Meadows Union",
+                "Mulberry Elementary",
+                "San Pasqual Valley Unified",
+                "Seeley Union Elementary",
+                "Westmorland Union Elementary",
+                "Other - please specify"
+            ],
+            "Inyo": [
+                "Big Pine Unified",
+                "Bishop Unified",
+                "Death Valley Unified",
+                "Inyo County Office of Education",
+                "Lone Pine Unified",
+                "Owens Valley Unified",
+                "Round Valley Joint Elementary",
+                "Other - please specify"
+            ],
+            "Kern": [
+                "Arvin Union",
+                "Bakersfield City",
+                "Beardsley Elementary",
+                "Blake Elementary",
+                "Buttonwillow Union Elementary",
+                "Caliente Union Elementary",
+                "Delano Joint Union High",
+                "Delano Union Elementary",
+                "Di Giorgio Elementary",
+                "Edison Elementary",
+                "El Tejon Unified",
+                "Elk Hills Elementary",
+                "Fairfax Elementary",
+                "Fruitvale Elementary",
+                "General Shafter Elementary",
+                "Greenfield Union",
+                "Kern County Office of Education",
+                "Kern County ROP",
+                "Kern High",
+                "Kern High ROC",
+                "Kernville Union Elementary",
+                "Lakeside Union",
+                "Lamont Elementary",
+                "Linns Valley-Poso Flat Union",
+                "Lost Hills Union Elementary",
+                "Maple Elementary",
+                "Maricopa Unified",
+                "McFarland Unified",
+                "McKittrick Elementary",
+                "Midway Elementary",
+                "Mojave Unified",
+                "Muroc Joint Unified",
+                "Norris Elementary",
+                "Panama-Buena Vista Union",
+                "Pond Union Elementary",
+                "Richland Union Elementary",
+                "Rio Bravo-Greeley Union Elementary",
+                "Rosedale Union Elementary",
+                "Semitropic Elementary",
+                "Sierra Sands Unified",
+                "South Fork Union",
+                "Southern Kern Unified",
+                "Standard Elementary",
+                "Taft City",
+                "Taft Union High",
+                "Tehachapi Unified",
+                "Vineland Elementary",
+                "Wasco Union Elementary",
+                "Wasco Union High",
+                "Other - please specify"
+            ],
+            "Kings": [
+                "Armona Union Elementary",
+                "Central Union Elementary",
+                "Corcoran Joint Unified",
+                "Hanford Elementary",
+                "Hanford Joint Union High",
+                "Island Union Elementary",
+                "Kings County Office of Education",
+                "Kings County ROP",
+                "Kings River-Hardwick Union Elementary",
+                "Kit Carson Union Elementary",
+                "Lakeside Union Elementary",
+                "Lemoore Union Elementary",
+                "Lemoore Union High",
+                "Pioneer Union Elementary",
+                "Reef-Sunset Unified",
+                "Other - please specify"
+            ],
+            "Lake": [
+                "Kelseyville Unified",
+                "Konocti Unified",
+                "Lake County Office of Education",
+                "Lakeport Unified",
+                "Lucerne Elementary",
+                "Middletown Unified",
+                "Upper Lake Unified",
+                "Other - please specify"
+            ],
+            "Lassen": [
+                "Big Valley Joint Unified",
+                "Fort Sage Unified",
+                "Janesville Union Elementary",
+                "Johnstonville Elementary",
+                "Lassen County Office of Education",
+                "Lassen ROP",
+                "Lassen Union High",
+                "Ravendale-Termo Elementary",
+                "Richmond Elementary",
+                "Shaffer Union Elementary",
+                "Susanville Elementary",
+                "Westwood Unified",
+                "Other - please specify"
+            ],
+            "Los Angeles": [
+                "ABC Unified",
+                "Acton-Agua Dulce Unified",
+                "Alhambra Unified",
+                "Antelope Valley ROP",
+                "Antelope Valley Union High",
+                "Arcadia Unified",
+                "Azusa Unified",
+                "Baldwin Park Unified",
+                "Bassett Unified",
+                "Bellflower Unified",
+                "Beverly Hills Unified",
+                "Bonita Unified",
+                "Burbank Unified",
+                "California Advancing Pathways for Students in Los Angeles County ROC/P",
+                "Castaic Union",
+                "Centinela Valley Union High",
+                "Charter Oak Unified",
+                "Claremont Unified",
+                "Compton Unified",
+                "Compton Unified ROP",
+                "Covina-Valley Unified",
+                "Culver City Unified",
+                "Downey Unified",
+                "Duarte Unified",
+                "East Whittier City Elementary",
+                "Eastside Union Elementary",
+                "El Monte City",
+                "El Monte Union High",
+                "El Rancho Unified",
+                "El Segundo Unified",
+                "Garvey Elementary",
+                "Glendale Unified",
+                "Glendora Unified",
+                "Gorman Joint",
+                "Hacienda la Puente Unified",
+                "Hart ROP",
+                "Hawthorne",
+                "Hermosa Beach City Elementary",
+                "Hughes-Elizabeth Lakes Union Elementary",
+                "Inglewood Unified",
+                "Keppel Union Elementary",
+                "La Canada Unified",
+                "Lancaster Elementary",
+                "Las Virgenes Unified",
+                "Lawndale Elementary",
+                "Lennox",
+                "Little Lake City Elementary",
+                "Long Beach Unified",
+                "Long Beach Unified ROP",
+                "Los Angeles County Office of Education",
+                "Los Angeles County ROP",
+                "Los Angeles Unified",
+                "Los Angeles Unified ROCP",
+                "Los Nietos",
+                "Lynwood Unified",
+                "Manhattan Beach Unified",
+                "Monrovia Unified",
+                "Montebello Unified",
+                "Mountain View Elementary",
+                "Newhall",
+                "Norwalk-La Mirada Unified",
+                "Palmdale Elementary",
+                "Palos Verdes Peninsula Unified",
+                "Paramount Unified",
+                "Pasadena Unified",
+                "Pomona Unified",
+                "Redondo Beach Unified",
+                "Rosemead Elementary",
+                "Rowland Unified",
+                "San Antonio ROP",
+                "San Gabriel Unified",
+                "San Gabriel Valley Regional Occupational Program",
+                "San Marino Unified",
+                "Santa Monica-Malibu Unified",
+                "Saugus Union",
+                "South Pasadena Unified",
+                "South Whittier Elementary",
+                "Southern California ROC",
+                "Sulphur Springs Union",
+                "Temple City Unified",
+                "Torrance Unified",
+                "Tri-Cities ROP",
+                "Valle Lindo Elementary",
+                "Walnut Valley Unified",
+                "West Covina Unified",
+                "Westside Union Elementary",
+                "Whittier City",
+                "Whittier Union High",
+                "William S. Hart Union High",
+                "Wilsona Elementary",
+                "Wiseburn Unified",
+                "Other - please specify"
+            ],
+            "Madera": [
+                "Alview-Dairyland Union Elementary",
+                "Bass Lake Joint Union Elementary",
+                "Chawanakee Unified",
+                "Chowchilla Elementary",
+                "Chowchilla Union High",
+                "Golden Valley Unified",
+                "Madera County Superintendent of Schools",
+                "Madera Unified",
+                "Raymond-Knowles Union Elementary",
+                "Yosemite Unified",
+                "Other - please specify"
+            ],
+            "Marin": [
+                "Bolinas-Stinson Union",
+                "Kentfield Elementary",
+                "Laguna Joint Elementary",
+                "Lagunitas Elementary",
+                "Larkspur-Corte Madera",
+                "Marin County Office of Education",
+                "Marin County ROP",
+                "Mill Valley Elementary",
+                "Miller Creek Elementary",
+                "Nicasio",
+                "Novato Unified",
+                "Reed Union Elementary",
+                "Ross Elementary",
+                "Ross Valley Elementary",
+                "San Rafael City Elementary",
+                "San Rafael City High",
+                "Sausalito Marin City",
+                "Shoreline Unified",
+                "Tamalpais Union High",
+                "Other - please specify"
+            ],
+            "Mariposa": [
+                "Mariposa County Office of Education",
+                "Mariposa County Unified",
+                "Other - please specify"
+            ],
+            "Mendocino": [
+                "Anderson Valley Unified",
+                "Arena Union Elementary",
+                "Fort Bragg Unified",
+                "Laytonville Unified",
+                "Leggett Valley Unified",
+                "Manchester Union Elementary",
+                "Mendocino County Office of Education",
+                "Mendocino County ROC/ROP",
+                "Mendocino Unified",
+                "Point Arena Joint Union High",
+                "Potter Valley Community Unified",
+                "Round Valley Unified",
+                "Ukiah Unified",
+                "Willits Unified",
+                "Other - please specify"
+            ],
+            "Merced": [
+                "Atwater Elementary",
+                "Ballico-Cressey Elementary",
+                "Delhi Unified",
+                "Dos Palos Oro Loma Joint Unified",
+                "El Nido Elementary",
+                "Gustine Unified",
+                "Hilmar Unified",
+                "Le Grand Union Elementary",
+                "Le Grand Union High",
+                "Livingston Union",
+                "Los Banos Unified",
+                "McSwain Union Elementary",
+                "Merced City Elementary",
+                "Merced County Office of Education",
+                "Merced County ROP",
+                "Merced River Union Elementary",
+                "Merced Union High",
+                "Plainsburg Union Elementary",
+                "Planada Elementary",
+                "Snelling-Merced Falls Union Elementary",
+                "Weaver Union",
+                "Winton",
+                "Other - please specify"
+            ],
+            "Modoc": [
+                "Modoc County Office of Education",
+                "Modoc County ROP",
+                "Modoc Joint Unified",
+                "Surprise Valley Joint Unified",
+                "Tulelake Basin Joint Unified",
+                "Other - please specify"
+            ],
+            "Mono": [
+                "Eastern Sierra Unified",
+                "Mammoth Unified",
+                "Mono County Office of Education",
+                "Other - please specify"
+            ],
+            "Monterey": [
+                "Alisal Union",
+                "Big Sur Unified",
+                "Bradley Union Elementary",
+                "Carmel Unified",
+                "Chualar Union",
+                "Gonzales Unified",
+                "Graves Elementary",
+                "Greenfield Union Elementary",
+                "King City Union",
+                "Lagunita Elementary",
+                "Mission Trails ROP",
+                "Mission Union Elementary",
+                "Monterey County Office of Education",
+                "Monterey Peninsula Unified",
+                "North Monterey County Unified",
+                "Pacific Grove Unified",
+                "Salinas City Elementary",
+                "Salinas Union High",
+                "San Antonio Union Elementary",
+                "San Ardo Union Elementary",
+                "San Lucas Union Elementary",
+                "Santa Rita Union Elementary",
+                "Soledad Unified",
+                "South Monterey County Joint Union High",
+                "Spreckels Union Elementary",
+                "Washington Union Elementary",
+                "Other - please specify"
+            ],
+            "Napa": [
+                "Calistoga Joint Unified",
+                "Howell Mountain Elementary",
+                "Napa County Office of Education",
+                "Napa County ROP",
+                "Napa Valley Unified",
+                "Pope Valley Union Elementary",
+                "Saint Helena Unified",
+                "Other - please specify"
+            ],
+            "Nevada": [
+                "Chicago Park Elementary",
+                "Clear Creek Elementary",
+                "Grass Valley Elementary",
+                "Nevada City Elementary",
+                "Nevada County Office of Education",
+                "Nevada Joint Union High",
+                "Penn Valley Union Elementary",
+                "Pleasant Ridge Union Elementary",
+                "Twin Ridges Elementary",
+                "Union Hill Elementary",
+                "Other - please specify"
+            ],
+            "Orange": [
+                "Anaheim Elementary",
+                "Anaheim Union High",
+                "Brea-Olinda Unified",
+                "Buena Park Elementary",
+                "Capistrano Unified",
+                "Central Orange County CTE Partnership (CTEp)",
+                "Centralia Elementary",
+                "Coastline ROP",
+                "College and Career Advantage",
+                "Cypress Elementary",
+                "Fountain Valley Elementary",
+                "Fullerton Elementary",
+                "Fullerton Joint Union High",
+                "Garden Grove Unified",
+                "Huntington Beach City Elementary",
+                "Huntington Beach Union High",
+                "Irvine Unified",
+                "La Habra City Elementary",
+                "Laguna Beach Unified",
+                "Los Alamitos Unified",
+                "Lowell Joint",
+                "Magnolia Elementary",
+                "Newport-Mesa Unified",
+                "North Orange County ROP-Adult",
+                "Ocean View",
+                "Orange County Department of Education",
+                "Orange Unified",
+                "Placentia-Yorba Linda Unified",
+                "SBE - Magnolia Science Academy Santa Ana",
+                "Saddleback Valley Unified",
+                "Santa Ana Unified",
+                "Savanna Elementary",
+                "Tustin Unified",
+                "Westminster",
+                "Other - please specify"
+            ],
+            "Placer": [
+                "Ackerman Charter",
+                "Alta-Dutch Flat Union Elementary",
+                "Auburn Union Elementary",
+                "Colfax Elementary",
+                "Dry Creek Joint Elementary",
+                "Eureka Union",
+                "Foresthill Union Elementary",
+                "Loomis Union Elementary",
+                "Newcastle Elementary",
+                "Placer County Office of Education",
+                "Placer Hills Union Elementary",
+                "Placer Union High",
+                "Rocklin Unified",
+                "Roseville City",
+                "Roseville Joint Union High",
+                "Tahoe-Truckee Unified",
+                "Western Placer Unified",
+                "Other - please specify"
+            ],
+            "Plumas": [
+                "Plumas County Office of Education",
+                "Plumas County ROP",
+                "Plumas Unified",
+                "Other - please specify"
+            ],
+            "Riverside": [
+                "Alvord Unified",
+                "Banning Unified",
+                "Beaumont Unified",
+                "California School for the Deaf-Riverside (State Special Schl)",
+                "Coachella Valley Unified",
+                "Corona-Norco Unified",
+                "Desert Center Unified",
+                "Desert Sands Unified",
+                "Hemet Unified",
+                "Jurupa Unified",
+                "Lake Elsinore Unified",
+                "Menifee Union",
+                "Moreno Valley Unified",
+                "Murrieta Valley Unified",
+                "Nuview Union",
+                "Palm Springs Unified",
+                "Palo Verde Unified",
+                "Perris Elementary",
+                "Perris Union High",
+                "Riverside County Office Of Education ROP",
+                "Riverside County Office of Education",
+                "Riverside Unified",
+                "Romoland Elementary",
+                "San Jacinto Unified",
+                "Temecula Valley Unified",
+                "Val Verde Unified",
+                "Other - please specify"
+            ],
+            "Sacramento": [
+                "Arcohe Union Elementary",
+                "Center Joint Unified",
+                "Elk Grove Unified",
+                "Elverta Joint Elementary",
+                "Folsom-Cordova Unified",
+                "Galt Joint Union Elementary",
+                "Galt Joint Union High",
+                "Natomas Unified",
+                "River Delta Joint Unified",
+                "Robla Elementary",
+                "Sacramento City Unified",
+                "Sacramento County Office of Education",
+                "Sacramento County ROP",
+                "San Juan Unified",
+                "Twin Rivers Unified",
+                "Other - please specify"
+            ],
+            "San Benito": [
+                "Aromas - San Juan Unified",
+                "Bitterwater-Tully Elementary",
+                "Cienega Union Elementary",
+                "Hollister",
+                "Jefferson Elementary",
+                "North County Joint Union Elementary",
+                "Panoche Elementary",
+                "San Benito County Office of Education",
+                "San Benito High",
+                "Southside Elementary",
+                "Tres Pinos Union Elementary",
+                "Willow Grove Union Elementary",
+                "Other - please specify"
+            ],
+            "San Bernardino": [
+                "Adelanto Elementary",
+                "Alta Loma Elementary",
+                "Apple Valley Unified",
+                "Baker Valley Unified",
+                "Baldy View ROP",
+                "Barstow Unified",
+                "Bear Valley Unified",
+                "Central Elementary",
+                "Chaffey Joint Union High",
+                "Chino Valley Unified",
+                "Colton Joint Unified",
+                "Colton-Redlands-Yucaipa ROP",
+                "Cucamonga Elementary",
+                "Etiwanda Elementary",
+                "Fontana Unified",
+                "Helendale Elementary",
+                "Hesperia Unified",
+                "Lucerne Valley Unified",
+                "Morongo Unified",
+                "Mountain View Elementary",
+                "Mt. Baldy Joint Elementary",
+                "Needles Unified",
+                "Ontario-Montclair",
+                "Oro Grande",
+                "Redlands Unified",
+                "Rialto Unified",
+                "Rim of the World Unified",
+                "San Bernardino City Unified",
+                "San Bernardino County Office of Education",
+                "San Bernardino County ROP",
+                "Silver Valley Unified",
+                "Snowline Joint Unified",
+                "Trona Joint Unified",
+                "Upland Unified",
+                "Victor Elementary",
+                "Victor Valley Union High",
+                "Yucaipa-Calimesa Joint Unified",
+                "Other - please specify"
+            ],
+            "San Diego": [
+                "Alpine Union Elementary",
+                "Bonsall Unified",
+                "Borrego Springs Unified",
+                "Cajon Valley Union",
+                "Cardiff Elementary",
+                "Carlsbad Unified",
+                "Chula Vista Elementary",
+                "Coronado Unified",
+                "Dehesa Elementary",
+                "Del Mar Union Elementary",
+                "Encinitas Union Elementary",
+                "Escondido Union",
+                "Escondido Union High",
+                "Fallbrook Union Elementary",
+                "Fallbrook Union High",
+                "Grossmont Union High",
+                "Jamul-Dulzura Union Elementary",
+                "Julian Union Elementary",
+                "Julian Union High",
+                "La Mesa-Spring Valley",
+                "Lakeside Union",
+                "Lemon Grove",
+                "Mountain Empire Unified",
+                "National Elementary",
+                "Oceanside Unified",
+                "Poway Unified",
+                "Ramona City Unified",
+                "Rancho Santa Fe Elementary",
+                "SBE - Baypoint Preparatory Academy San Diego",
+                "SBE - College Preparatory Middle",
+                "SBE - Vista Springs Charter",
+                "San Diego Community College",
+                "San Diego County Office of Education",
+                "San Diego County ROP",
+                "San Diego Unified",
+                "San Dieguito Union High",
+                "San Marcos Unified",
+                "San Pasqual Union Elementary",
+                "San Ysidro Elementary",
+                "Santee",
+                "Solana Beach Elementary",
+                "South Bay Union",
+                "Spencer Valley Elementary",
+                "Sweetwater Union High",
+                "Vallecitos Elementary",
+                "Valley Center-Pauma Unified",
+                "Vista Unified",
+                "Warner Unified",
+                "Other - please specify"
+            ],
+            "San Francisco": [
+                "SBE - KIPP Bayview Elementary",
+                "SBE - The New School of San Francisco",
+                "San Francisco County Office of Education",
+                "San Francisco County ROP",
+                "San Francisco Unified",
+                "Other - please specify"
+            ],
+            "San Joaquin": [
+                "Banta Unified",
+                "Escalon Unified",
+                "Jefferson Elementary",
+                "Lammersville Joint Unified",
+                "Lincoln Unified",
+                "Linden Unified",
+                "Lodi Unified",
+                "Manteca Unified",
+                "New Hope Elementary",
+                "New Jerusalem Elementary",
+                "Oak View Union Elementary",
+                "Ripon Unified",
+                "San Joaquin County Office of Education",
+                "San Joaquin County ROP",
+                "Stockton Unified",
+                "Tracy Joint Unified",
+                "Other - please specify"
+            ],
+            "San Luis Obispo": [
+                "Atascadero Unified",
+                "Cayucos Elementary",
+                "Coast Unified",
+                "Lucia Mar Unified",
+                "Paso Robles Joint Unified",
+                "Pleasant Valley Joint Union Elementary",
+                "San Luis Coastal Unified",
+                "San Luis Obispo County Office of Education",
+                "San Miguel Joint Union",
+                "Shandon Joint Unified",
+                "Templeton Unified",
+                "Other - please specify"
+            ],
+            "San Mateo": [
+                "Bayshore Elementary",
+                "Belmont-Redwood Shores Elementary",
+                "Brisbane Elementary",
+                "Burlingame Elementary",
+                "Cabrillo Unified",
+                "Hillsborough City Elementary",
+                "Jefferson Elementary",
+                "Jefferson Union High",
+                "La Honda-Pescadero Unified",
+                "Las Lomitas Elementary",
+                "Menlo Park City Elementary",
+                "Millbrae Elementary",
+                "Pacifica",
+                "Portola Valley Elementary",
+                "Ravenswood City Elementary",
+                "Redwood City Elementary",
+                "San Bruno Park Elementary",
+                "San Carlos Elementary",
+                "San Mateo County Office of Education",
+                "San Mateo Union High",
+                "San Mateo-Foster City",
+                "Sequoia Union High",
+                "South San Francisco Unified",
+                "Woodside Elementary",
+                "Other - please specify"
+            ],
+            "Santa Barbara": [
+                "Ballard Elementary",
+                "Blochman Union Elementary",
+                "Buellton Union Elementary",
+                "Carpinteria Unified",
+                "Cold Spring Elementary",
+                "College Elementary",
+                "Cuyama Joint Unified",
+                "Goleta Union Elementary",
+                "Guadalupe Union Elementary",
+                "Hope Elementary",
+                "Lompoc Unified",
+                "Los Olivos Elementary",
+                "Montecito Union Elementary",
+                "Orcutt Union Elementary",
+                "SBE - Olive Grove Charter - Buellton",
+                "SBE - Olive Grove Charter - Lompoc",
+                "SBE - Olive Grove Charter - Orcutt/Santa Maria",
+                "SBE - Olive Grove Charter - Santa Barbara",
+                "Santa Barbara County Office of Education",
+                "Santa Barbara County ROP",
+                "Santa Barbara Unified",
+                "Santa Maria Joint Union High",
+                "Santa Maria-Bonita",
+                "Santa Ynez Valley Union High",
+                "Solvang Elementary",
+                "Vista del Mar Union",
+                "Other - please specify"
+            ],
+            "Santa Clara": [
+                "Alum Rock Union Elementary",
+                "Berryessa Union Elementary",
+                "Cambrian",
+                "Campbell Union",
+                "Campbell Union High",
+                "Cupertino Union",
+                "East Side Union High",
+                "Evergreen Elementary",
+                "Franklin-McKinley Elementary",
+                "Fremont Union High",
+                "Gilroy Unified",
+                "Lakeside Joint",
+                "Loma Prieta Joint Union Elementary",
+                "Los Altos Elementary",
+                "Los Gatos Union Elementary",
+                "Los Gatos-Saratoga Union High",
+                "Luther Burbank",
+                "Metro Education",
+                "Milpitas Unified",
+                "Moreland",
+                "Morgan Hill Unified",
+                "Mount Pleasant Elementary",
+                "Mountain View Whisman",
+                "Mountain View-Los Altos Union High",
+                "Oak Grove Elementary",
+                "Orchard Elementary",
+                "Palo Alto Unified",
+                "SBE - KIPP Navigate College Prep",
+                "San Jose Unified",
+                "Santa Clara County Office of Education",
+                "Santa Clara County ROP",
+                "Santa Clara Unified",
+                "Saratoga Union Elementary",
+                "Sunnyvale",
+                "Union Elementary",
+                "Other - please specify"
+            ],
+            "Santa Cruz": [
+                "Bonny Doon Union Elementary",
+                "Happy Valley Elementary",
+                "Live Oak Elementary",
+                "Mountain Elementary",
+                "Pacific Elementary",
+                "Pajaro Valley Unified",
+                "SBE - Watsonville Prep",
+                "San Lorenzo Valley Unified",
+                "Santa Cruz City Elementary",
+                "Santa Cruz City High",
+                "Santa Cruz County Office of Education",
+                "Santa Cruz County ROP",
+                "Scotts Valley Unified",
+                "Soquel Union Elementary",
+                "Other - please specify"
+            ],
+            "Shasta": [
+                "Anderson Union High",
+                "Bella Vista Elementary",
+                "Black Butte Union Elementary",
+                "Cascade Union Elementary",
+                "Castle Rock Union Elementary",
+                "Columbia Elementary",
+                "Cottonwood Union Elementary",
+                "Enterprise Elementary",
+                "Fall River Joint Unified",
+                "French Gulch-Whiskeytown Elementary",
+                "Gateway Unified",
+                "Grant Elementary",
+                "Happy Valley Union Elementary",
+                "Igo, Ono, Platina Union Elementary",
+                "Junction Elementary",
+                "Millville Elementary",
+                "Mountain Union Elementary",
+                "North Cow Creek Elementary",
+                "Oak Run Elementary",
+                "Pacheco Union Elementary",
+                "Redding Elementary",
+                "Shasta County Office of Education",
+                "Shasta Union Elementary",
+                "Shasta Union High",
+                "Shasta-Trinity ROP",
+                "Whitmore Union Elementary",
+                "Other - please specify"
+            ],
+            "Sierra": [
+                "Sierra County Office of Education",
+                "Sierra-Plumas Joint Unified",
+                "WIlliam (R) Rouse ROP",
+                "Other - please specify"
+            ],
+            "Siskiyou": [
+                "Big Springs Union Elementary",
+                "Bogus Elementary",
+                "Butte Valley Unified",
+                "Butteville Union Elementary",
+                "Delphic Elementary",
+                "Dunsmuir Elementary",
+                "Dunsmuir Joint Union High",
+                "Gazelle Union Elementary",
+                "Grenada Elementary",
+                "Happy Camp Union Elementary",
+                "Hornbrook Elementary",
+                "Junction Elementary",
+                "Klamath River Union Elementary",
+                "Little Shasta Elementary",
+                "McCloud Union Elementary",
+                "Montague Elementary",
+                "Mt. Shasta Union Elementary",
+                "Scott Valley Unified",
+                "Seiad Elementary",
+                "Siskiyou County Office of Education",
+                "Siskiyou ROP",
+                "Siskiyou Union High",
+                "Weed Union Elementary",
+                "Willow Creek Elementary",
+                "Yreka Union Elementary",
+                "Yreka Union High",
+                "Other - please specify"
+            ],
+            "Solano": [
+                "Benicia Unified",
+                "Dixon Unified",
+                "Fairfield-Suisun Unified",
+                "Solano County Office of Education",
+                "Travis Unified",
+                "Vacaville Unified",
+                "Vallejo City Unified",
+                "Other - please specify"
+            ],
+            "Sonoma": [
+                "Alexander Valley Union Elementary",
+                "Bellevue Union",
+                "Bennett Valley Union Elementary",
+                "Cinnabar Elementary",
+                "Cloverdale Unified",
+                "Cotati-Rohnert Park Unified",
+                "Dunham Elementary",
+                "Forestville Union Elementary",
+                "Fort Ross Elementary",
+                "Geyserville Unified",
+                "Gravenstein Union Elementary",
+                "Guerneville Elementary",
+                "Harmony Union Elementary",
+                "Healdsburg Unified",
+                "Horicon Elementary",
+                "Kashia Elementary",
+                "Kenwood",
+                "Liberty Elementary",
+                "Mark West Union Elementary",
+                "Monte Rio Union Elementary",
+                "Montgomery Elementary",
+                "Oak Grove Union Elementary",
+                "Old Adobe Union",
+                "Petaluma City Elementary",
+                "Petaluma Joint Union High",
+                "Piner-Olivet Union Elementary",
+                "Rincon Valley Union Elementary",
+                "Roseland",
+                "Santa Rosa Elementary",
+                "Santa Rosa High",
+                "Sebastopol Union Elementary",
+                "Sonoma County Office of Education",
+                "Sonoma County ROP",
+                "Sonoma Valley Unified",
+                "Twin Hills Union Elementary",
+                "Two Rock Union",
+                "Waugh Elementary",
+                "West Side Union Elementary",
+                "West Sonoma County Union High",
+                "Wilmar Union Elementary",
+                "Windsor Unified",
+                "Wright Elementary",
+                "Other - please specify"
+            ],
+            "Stanislaus": [
+                "Ceres Unified",
+                "Chatom Union",
+                "Denair Unified",
+                "Empire Union Elementary",
+                "Gratton Elementary",
+                "Hart-Ransom Union Elementary",
+                "Hickman Community Charter",
+                "Hughson Unified",
+                "Keyes Union",
+                "Knights Ferry Elementary",
+                "Modesto City Elementary",
+                "Modesto City High",
+                "Newman-Crows Landing Unified",
+                "Oakdale Joint Unified",
+                "Paradise Elementary",
+                "Patterson Joint Unified",
+                "Riverbank Unified",
+                "Roberts Ferry Union Elementary",
+                "Salida Union Elementary",
+                "Shiloh Elementary",
+                "Stanislaus County Office of Education",
+                "Stanislaus Union Elementary",
+                "Sylvan Union Elementary",
+                "Turlock Unified",
+                "Valley Home Joint Elementary",
+                "Waterford Unified",
+                "Yosemite ROP",
+                "Other - please specify"
+            ],
+            "Sutter": [
+                "Brittan Elementary",
+                "Browns Elementary",
+                "East Nicolaus Joint Union High",
+                "Franklin Elementary",
+                "Live Oak Unified",
+                "Marcum-Illinois Union Elementary",
+                "Meridian Elementary",
+                "Nuestro Elementary",
+                "Pleasant Grove Joint Union",
+                "Sutter County Office of Education",
+                "Sutter Union High",
+                "Tri-County ROP",
+                "Winship-Robbins",
+                "Yuba City Unified",
+                "Other - please specify"
+            ],
+            "Tehama": [
+                "Antelope Elementary",
+                "Corning Union Elementary",
+                "Corning Union High",
+                "Evergreen Union",
+                "Flournoy Union Elementary",
+                "Gerber Union Elementary",
+                "Kirkwood Elementary",
+                "Lassen View Union Elementary",
+                "Los Molinos Unified",
+                "Red Bluff Joint Union High",
+                "Red Bluff Union Elementary",
+                "Reeds Creek Elementary",
+                "Richfield Elementary",
+                "Tehama County Department of Education",
+                "Other - please specify"
+            ],
+            "Trinity": [
+                "Burnt Ranch Elementary",
+                "Coffee Creek Elementary",
+                "Douglas City Elementary",
+                "Junction City Elementary",
+                "Lewiston Elementary",
+                "Mountain Valley Unified",
+                "Southern Trinity Joint Unified",
+                "Trinity Alps Unified",
+                "Trinity Center Elementary",
+                "Trinity County Office of Education",
+                "Other - please specify"
+            ],
+            "Tulare": [
+                "Allensworth Elementary",
+                "Alpaugh Unified",
+                "Alta Vista Elementary",
+                "Buena Vista Elementary",
+                "Burton Elementary",
+                "Columbine Elementary",
+                "Cutler-Orosi Joint Unified",
+                "Dinuba Unified",
+                "Ducor Union Elementary",
+                "Earlimart Elementary",
+                "Exeter Unified",
+                "Farmersville Unified",
+                "Hope Elementary",
+                "Hot Springs Elementary",
+                "Kings River Union Elementary",
+                "Liberty Elementary",
+                "Lindsay Unified",
+                "Monson-Sultana Joint Union Elementary",
+                "Oak Valley Union Elementary",
+                "Outside Creek Elementary",
+                "Palo Verde Union Elementary",
+                "Pixley Union Elementary",
+                "Pleasant View Elementary",
+                "Porterville Unified",
+                "Richgrove Elementary",
+                "Rockford Elementary",
+                "Saucelito Elementary",
+                "Sequoia Union Elementary",
+                "Springville Union Elementary",
+                "Stone Corral Elementary",
+                "Strathmore Union Elementary",
+                "Sundale Union Elementary",
+                "Sunnyside Union Elementary",
+                "Terra Bella Union Elementary",
+                "Three Rivers Union Elementary",
+                "Tipton Elementary",
+                "Traver Joint Elementary",
+                "Tulare City",
+                "Tulare County Office of Education",
+                "Tulare Joint Union High",
+                "Visalia Unified",
+                "Waukena Joint Union Elementary",
+                "Woodlake Unified",
+                "Woodville Union Elementary",
+                "Other - please specify"
+            ],
+            "Tuolumne": [
+                "Belleview Elementary",
+                "Big Oak Flat-Groveland Unified",
+                "Columbia Union",
+                "Curtis Creek Elementary",
+                "Jamestown Elementary",
+                "Sonora Elementary",
+                "Sonora Union High",
+                "Soulsbyville Elementary",
+                "Summerville Elementary",
+                "Summerville Union High",
+                "Tuolumne County Superintendent of Schools",
+                "Twain Harte",
+                "Other - please specify"
+            ],
+            "Ventura": [
+                "Briggs Elementary",
+                "Conejo Valley Unified",
+                "Fillmore Unified",
+                "Hueneme Elementary",
+                "Mesa Union Elementary",
+                "Moorpark Unified",
+                "Mupu Elementary",
+                "Oak Park Unified",
+                "Ocean View",
+                "Ojai Unified",
+                "Oxnard",
+                "Oxnard Union High",
+                "Pleasant Valley",
+                "Rio Elementary",
+                "Santa Clara Elementary",
+                "Santa Paula Unified",
+                "Simi Valley Unified",
+                "Somis Union",
+                "Ventura County Office of Education",
+                "Ventura County ROP",
+                "Ventura Unified",
+                "Other - please specify"
+            ],
+            "Yolo": [
+                "Davis Joint Unified",
+                "Esparto Unified",
+                "Washington Unified",
+                "Winters Joint Unified",
+                "Woodland Joint Unified",
+                "Yolo County Office of Education",
+                "Yolo County ROP",
+                "Other - please specify"
+            ],
+            "Yuba": [
+                "Camptonville Elementary",
+                "Marysville Joint Unified",
+                "Plumas Lake Elementary",
+                "Wheatland",
+                "Wheatland Union High",
+                "Yuba County Office of Education",
+                "Other - please specify"
+            ]
         };
 
-        const counties = Object.keys(paDistricts).sort();
+        const counties = Object.keys(caDistricts).sort();
 
         // Grade band definitions
         const gradeBands = ['K-2', '3-5', '6-8', '9-12'];
@@ -1565,7 +2921,7 @@
 
         function updateDistrictDropdown(county) {
             districtDropdown.innerHTML = '';
-            const districts = paDistricts[county] || [];
+            const districts = caDistricts[county] || [];
             districts.forEach(district => {
                 const item = document.createElement('div');
                 item.className = 'dropdown-item';
@@ -1603,14 +2959,14 @@
             districtDropdown.classList.add('open');
             const county = countyValue.value;
             if (county) {
-                filterDropdown(districtDropdown, paDistricts[county], districtSearch.value);
+                filterDropdown(districtDropdown, caDistricts[county], districtSearch.value);
             }
         });
 
         districtSearch.addEventListener('input', () => {
             const county = countyValue.value;
             if (county) {
-                filterDropdown(districtDropdown, paDistricts[county], districtSearch.value);
+                filterDropdown(districtDropdown, caDistricts[county], districtSearch.value);
             }
         });
 
@@ -1922,4 +3278,5 @@
         updateProgress();
     </script>
 </body>
+
 </html>

@@ -15,7 +15,7 @@ This document outlines every question, response option, and conditional logic in
 - Charter school
 
 **Q2. What county is the public school in?** *(Required)*
-> *Shows only if Q1 = "Public school." Searchable dropdown of all PA counties.*
+> *Shows only if Q1 = "Public school." Searchable dropdown of all CA counties.*
 
 **Q3a. What is your school district?** *(Required)*
 > *Shows only if Q1 = "Public school." Searchable dropdown filtered by selected county. Includes "Other - please specify" option per county.*
